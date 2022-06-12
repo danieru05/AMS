@@ -37,44 +37,44 @@ Partial Class Login
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Typo Formal Demo", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Berlin Sans FB Demi", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(543, 68)
+        Me.Label1.Location = New System.Drawing.Point(525, 68)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 42)
+        Me.Label1.Size = New System.Drawing.Size(111, 43)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Login"
         '
         'Pass_Label
         '
         Me.Pass_Label.AutoSize = True
-        Me.Pass_Label.Font = New System.Drawing.Font("Typo Formal Demo", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Pass_Label.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Pass_Label.ForeColor = System.Drawing.Color.DimGray
         Me.Pass_Label.Location = New System.Drawing.Point(461, 218)
         Me.Pass_Label.Name = "Pass_Label"
-        Me.Pass_Label.Size = New System.Drawing.Size(84, 26)
+        Me.Pass_Label.Size = New System.Drawing.Size(88, 23)
         Me.Pass_Label.TabIndex = 3
         Me.Pass_Label.Text = "Password"
         '
         'User
         '
         Me.User.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.User.Font = New System.Drawing.Font("Typo Formal Demo", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.User.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.User.ForeColor = System.Drawing.Color.DimGray
         Me.User.Location = New System.Drawing.Point(461, 167)
         Me.User.Name = "User"
-        Me.User.Size = New System.Drawing.Size(249, 33)
+        Me.User.Size = New System.Drawing.Size(249, 29)
         Me.User.TabIndex = 4
         '
         'Pass
         '
         Me.Pass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Pass.Font = New System.Drawing.Font("Typo Formal Demo", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Pass.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Pass.ForeColor = System.Drawing.Color.DimGray
         Me.Pass.Location = New System.Drawing.Point(461, 247)
         Me.Pass.Name = "Pass"
         Me.Pass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.Pass.Size = New System.Drawing.Size(249, 33)
+        Me.Pass.Size = New System.Drawing.Size(249, 29)
         Me.Pass.TabIndex = 5
         '
         'SignIn
@@ -83,7 +83,7 @@ Partial Class Login
         Me.SignIn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SignIn.FlatAppearance.BorderSize = 0
         Me.SignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SignIn.Font = New System.Drawing.Font("Typo Formal Demo", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SignIn.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SignIn.ForeColor = System.Drawing.Color.White
         Me.SignIn.Location = New System.Drawing.Point(533, 307)
         Me.SignIn.Name = "SignIn"
@@ -117,11 +117,11 @@ Partial Class Login
         'User_Label
         '
         Me.User_Label.AutoSize = True
-        Me.User_Label.Font = New System.Drawing.Font("Typo Formal Demo", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.User_Label.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.User_Label.ForeColor = System.Drawing.Color.DimGray
         Me.User_Label.Location = New System.Drawing.Point(461, 138)
         Me.User_Label.Name = "User_Label"
-        Me.User_Label.Size = New System.Drawing.Size(93, 26)
+        Me.User_Label.Size = New System.Drawing.Size(98, 23)
         Me.User_Label.TabIndex = 2
         Me.User_Label.Text = "Username:"
         '

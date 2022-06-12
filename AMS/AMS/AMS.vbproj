@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -45,7 +60,7 @@
     <OptionStrict>Off</OptionStrict>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionInfer>Off</OptionInfer>
+    <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>AMS.ico</ApplicationIcon>
@@ -88,8 +103,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AMSDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="AMSDataSet.vb">
-      <DependentUpon>AMSDataSet.xsd</DependentUpon>
+    <Compile Include="Department - Teachers.Designer.vb">
+      <DependentUpon>Department - Teachers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Department - Teachers.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Departments.Designer.vb">
       <DependentUpon>Departments.vb</DependentUpon>
@@ -97,10 +115,46 @@
     <Compile Include="Departments.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Edit Profile.Designer.vb">
+      <DependentUpon>Edit Profile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Profile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Teacher.Designer.vb">
+      <DependentUpon>Edit Teacher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Teacher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit Student.Designer.vb">
+      <DependentUpon>Edit Student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teachers Form.Designer.vb">
+      <DependentUpon>Teachers Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Teachers Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Profile.Designer.vb">
       <DependentUpon>Profile.vb</DependentUpon>
     </Compile>
     <Compile Include="Profile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Section - Course Add.Designer.vb">
+      <DependentUpon>Section - Course Add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Section - Course Add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Section - Students.Designer.vb">
+      <DependentUpon>Section - Students.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Section - Students.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sections.Designer.vb">
@@ -139,10 +193,22 @@
     <Compile Include="Overview.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Student Add.Designer.vb">
+      <DependentUpon>Student Add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Student Add.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Students.Designer.vb">
       <DependentUpon>Students.vb</DependentUpon>
     </Compile>
     <Compile Include="Students.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher Add.Designer.vb">
+      <DependentUpon>Teacher Add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher Add.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Teachers.Designer.vb">
@@ -151,16 +217,49 @@
     <Compile Include="Teachers.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Teacher_UpdateProfile.Designer.vb">
+      <DependentUpon>Teacher_UpdateProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher_UpdateProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update.Designer.vb">
+      <DependentUpon>Update.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Update.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Department - Teachers.resx">
+      <DependentUpon>Department - Teachers.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Departments.resx">
       <DependentUpon>Departments.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Edit Profile.resx">
+      <DependentUpon>Edit Profile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Teacher.resx">
+      <DependentUpon>Edit Teacher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Student.resx">
+      <DependentUpon>Edit Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teachers Form.resx">
+      <DependentUpon>Teachers Form.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Section - Course Add.resx">
+      <DependentUpon>Section - Course Add.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Section - Students.resx">
+      <DependentUpon>Section - Students.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sections.resx">
       <DependentUpon>Sections.vb</DependentUpon>
@@ -177,11 +276,23 @@
     <EmbeddedResource Include="Overview.resx">
       <DependentUpon>Overview.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Student Add.resx">
+      <DependentUpon>Student Add.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Students.resx">
       <DependentUpon>Students.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Teacher Add.resx">
+      <DependentUpon>Teacher Add.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teachers.resx">
       <DependentUpon>Teachers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher_UpdateProfile.resx">
+      <DependentUpon>Teacher_UpdateProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update.resx">
+      <DependentUpon>Update.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -212,6 +323,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="AMS.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

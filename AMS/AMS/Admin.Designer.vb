@@ -75,7 +75,7 @@ Partial Class Admin
         Me.Profile_Button.FlatAppearance.BorderSize = 0
         Me.Profile_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.Profile_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Profile_Button.Font = New System.Drawing.Font("Typo Formal Demo", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Profile_Button.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Profile_Button.ForeColor = System.Drawing.Color.White
         Me.Profile_Button.Image = CType(resources.GetObject("Profile_Button.Image"), System.Drawing.Image)
         Me.Profile_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -98,7 +98,7 @@ Partial Class Admin
         Me.Overview_Tab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Overview_Tab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.Overview_Tab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Overview_Tab.Font = New System.Drawing.Font("Typo Formal Demo", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Overview_Tab.Font = New System.Drawing.Font("Berlin Sans FB", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Overview_Tab.ForeColor = System.Drawing.Color.White
         Me.Overview_Tab.Image = CType(resources.GetObject("Overview_Tab.Image"), System.Drawing.Image)
         Me.Overview_Tab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -120,7 +120,7 @@ Partial Class Admin
         Me.Teachers_Tab.FlatAppearance.BorderSize = 0
         Me.Teachers_Tab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.Teachers_Tab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Teachers_Tab.Font = New System.Drawing.Font("Typo Formal Demo", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Teachers_Tab.Font = New System.Drawing.Font("Berlin Sans FB", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Teachers_Tab.ForeColor = System.Drawing.Color.White
         Me.Teachers_Tab.Image = CType(resources.GetObject("Teachers_Tab.Image"), System.Drawing.Image)
         Me.Teachers_Tab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -142,7 +142,7 @@ Partial Class Admin
         Me.Students_Tab.FlatAppearance.BorderSize = 0
         Me.Students_Tab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.Students_Tab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Students_Tab.Font = New System.Drawing.Font("Typo Formal Demo", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Students_Tab.Font = New System.Drawing.Font("Berlin Sans FB", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Students_Tab.ForeColor = System.Drawing.Color.White
         Me.Students_Tab.Image = CType(resources.GetObject("Students_Tab.Image"), System.Drawing.Image)
         Me.Students_Tab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -163,7 +163,7 @@ Partial Class Admin
         Me.Sections_Tab.FlatAppearance.BorderSize = 0
         Me.Sections_Tab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.Sections_Tab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Sections_Tab.Font = New System.Drawing.Font("Typo Formal Demo", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Sections_Tab.Font = New System.Drawing.Font("Berlin Sans FB", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Sections_Tab.ForeColor = System.Drawing.Color.White
         Me.Sections_Tab.Image = CType(resources.GetObject("Sections_Tab.Image"), System.Drawing.Image)
         Me.Sections_Tab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -185,7 +185,7 @@ Partial Class Admin
         Me.Departments_Tab.FlatAppearance.BorderSize = 0
         Me.Departments_Tab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.Departments_Tab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Departments_Tab.Font = New System.Drawing.Font("Typo Formal Demo", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Departments_Tab.Font = New System.Drawing.Font("Berlin Sans FB", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Departments_Tab.ForeColor = System.Drawing.Color.White
         Me.Departments_Tab.Image = CType(resources.GetObject("Departments_Tab.Image"), System.Drawing.Image)
         Me.Departments_Tab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -202,11 +202,11 @@ Partial Class Admin
         '
         Me.Title.AutoSize = True
         Me.Title.BackColor = System.Drawing.Color.Transparent
-        Me.Title.Font = New System.Drawing.Font("Crique Grotesk Medium", 45.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Title.Font = New System.Drawing.Font("Microsoft Sans Serif", 45.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Title.ForeColor = System.Drawing.Color.White
         Me.Title.Location = New System.Drawing.Point(36, 50)
         Me.Title.Name = "Title"
-        Me.Title.Size = New System.Drawing.Size(158, 69)
+        Me.Title.Size = New System.Drawing.Size(163, 69)
         Me.Title.TabIndex = 6
         Me.Title.Text = "AMS"
         '
@@ -218,7 +218,7 @@ Partial Class Admin
         Me.LogOut_Button.FlatAppearance.BorderSize = 0
         Me.LogOut_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue
         Me.LogOut_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.LogOut_Button.Font = New System.Drawing.Font("Typo Formal Demo", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogOut_Button.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LogOut_Button.ForeColor = System.Drawing.Color.White
         Me.LogOut_Button.Image = CType(resources.GetObject("LogOut_Button.Image"), System.Drawing.Image)
         Me.LogOut_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -236,11 +236,11 @@ Partial Class Admin
         '
         Me.Day_Label.AutoSize = True
         Me.Day_Label.BackColor = System.Drawing.Color.Transparent
-        Me.Day_Label.Font = New System.Drawing.Font("Typo Formal Demo", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Day_Label.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Day_Label.ForeColor = System.Drawing.Color.White
         Me.Day_Label.Location = New System.Drawing.Point(3, 11)
         Me.Day_Label.Name = "Day_Label"
-        Me.Day_Label.Size = New System.Drawing.Size(42, 26)
+        Me.Day_Label.Size = New System.Drawing.Size(45, 23)
         Me.Day_Label.TabIndex = 4
         Me.Day_Label.Text = "Day"
         '
@@ -252,11 +252,11 @@ Partial Class Admin
         '
         Me.Time_Label.AutoSize = True
         Me.Time_Label.BackColor = System.Drawing.Color.Transparent
-        Me.Time_Label.Font = New System.Drawing.Font("Typo Formal Demo", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Time_Label.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Time_Label.ForeColor = System.Drawing.Color.White
         Me.Time_Label.Location = New System.Drawing.Point(792, 11)
         Me.Time_Label.Name = "Time_Label"
-        Me.Time_Label.Size = New System.Drawing.Size(48, 26)
+        Me.Time_Label.Size = New System.Drawing.Size(50, 23)
         Me.Time_Label.TabIndex = 5
         Me.Time_Label.Text = "Time"
         '
@@ -264,11 +264,11 @@ Partial Class Admin
         '
         Me.Date_Label.AutoSize = True
         Me.Date_Label.BackColor = System.Drawing.Color.Transparent
-        Me.Date_Label.Font = New System.Drawing.Font("Typo Formal Demo", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Date_Label.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Date_Label.ForeColor = System.Drawing.Color.White
         Me.Date_Label.Location = New System.Drawing.Point(323, 11)
         Me.Date_Label.Name = "Date_Label"
-        Me.Date_Label.Size = New System.Drawing.Size(48, 26)
+        Me.Date_Label.Size = New System.Drawing.Size(52, 23)
         Me.Date_Label.TabIndex = 6
         Me.Date_Label.Text = "Date"
         '
@@ -295,6 +295,7 @@ Partial Class Admin
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Admin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

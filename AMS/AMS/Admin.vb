@@ -1,8 +1,16 @@
 ﻿Imports System.Data.OleDb
 Public Class Admin
-    Private Sub LogOut_Button_Click(sender As Object, e As EventArgs) Handles LogOut_Button.Click
+    Sub logout()
+        Department___Teachers.Hide()
+        Section___Course_Add.Hide()
+        Section___Students.Hide()
+        Student_Add.Hide()
+        Teacher_ADD.Hide()
         Me.Hide()
         Login.Show()
+    End Sub
+    Private Sub LogOut_Button_Click(sender As Object, e As EventArgs) Handles LogOut_Button.Click
+        logout()
     End Sub
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Overview_Tab.BackColor = Color.LightSkyBlue
@@ -75,5 +83,16 @@ Public Class Admin
         Students_Tab.BackColor = Color.Transparent
         Profile_Button.BackColor = Color.LightSkyBlue
         Tabs(Profile)
+    End Sub
+    Private Sub Admin_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If MsgBox("Are you sure you want to logout?", vbQuestion + vbYesNo) = vbYes Then
+            logout()
+        Else
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub Display_Panel_Paint(sender As Object, e As PaintEventArgs) Handles Display_Panel.Paint
+
     End Sub
 End Class
