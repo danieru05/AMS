@@ -23,6 +23,7 @@ Public Class Teacher_ADD
     Sub Combobox()
         Dim dept As New OleDbCommand("Select Department from Department", conn)
         Dim sec As New OleDbCommand("Select [Subject Name] from Subject", conn)
+        Dim sec1 As New OleDbCommand("Select [Section] from [Section]", conn)
         Dim dr As OleDbDataReader
         If opt = 0 Then
             Dept_ComboBox.Items.Add(Department___Teachers.Title.Text)
@@ -37,6 +38,12 @@ Public Class Teacher_ADD
         While dr.Read()
             Subj_ComboBox.Items.Add(dr.Item("Subject Name"))
         End While
+
+        dr = sec1.ExecuteReader
+        While dr.Read()
+            Sec_Box.Items.Add(dr.Item("Section"))
+        End While
+
     End Sub
     Private Sub Teacher_ADD_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Combobox()
@@ -44,8 +51,13 @@ Public Class Teacher_ADD
 
     Private Sub SignIn_Click(sender As Object, e As EventArgs) Handles SignIn.Click
         Dim add As New OleDbCommand("Insert into Teacher([user], [pass], [Last Name], [First Name], [Middle Name], [Email], [Department], [Subject Name]) 
-        values('username', 'password', '" & LName_TextBox.Text & "','" & FName_TextBox.Text & "','" & MName_TextBox.Text & "','" & Email_TextBox.Text & "','" & Dept_ComboBox.Text & "','" & Subj_ComboBox.Text & "')", conn)
+            values('username', 'password', '" & LName_TextBox.Text & "','" & FName_TextBox.Text & "','" & MName_TextBox.Text & "','" & Email_TextBox.Text & "','" & Dept_ComboBox.Text & "','" & Subj_ComboBox.Text & "')", conn)
         add.ExecuteNonQuery()
+        For num As Integer = 0 To Sec_Box.CheckedItems.Count - 1
+            Dim secteach As New OleDbCommand("Insert into [Sections Handled]([Section], [Teacher]) 
+            values('" & Sec_Box.CheckedItems(num) & "','" & LName_TextBox.Text + ", " + FName_TextBox.Text + " " + MName_TextBox.Text & "')", conn)
+            secteach.ExecuteNonQuery()
+        Next
         Teachers.Teachers_DataGrid.Rows.Clear()
         Department()
         AllTeachers()

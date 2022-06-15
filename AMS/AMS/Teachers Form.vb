@@ -1,10 +1,19 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.ComponentModel
+Imports System.Data.OleDb
 Public Class Teachers_Form1
-    Private Sub LogOut_Button_Click(sender As Object, e As EventArgs) Handles LogOut_Button.Click
+
+    Sub LogoutClosed()
+        Overview.Full_Name.Text = ""
+        Section_Teacher.Close()
+        Student_Teacher.Close()
         Me.Hide()
         Login.Show()
     End Sub
+    Private Sub LogOut_Button_Click(sender As Object, e As EventArgs) Handles LogOut_Button.Click
+        LogoutClosed()
+    End Sub
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Overview_Tab.BackColor = Color.LightSkyBlue
         Tabs(Overview)
     End Sub
@@ -32,7 +41,7 @@ Public Class Teachers_Form1
         Sections_Tab.BackColor = Color.LightSkyBlue
         Students_Tab.BackColor = Color.Transparent
         Profile_Button.BackColor = Color.Transparent
-        Tabs(Sections)
+        Tabs(Section_Teacher)
     End Sub
 
     Private Sub Students_Tab_Click(sender As Object, e As EventArgs) Handles Students_Tab.Click
@@ -40,7 +49,7 @@ Public Class Teachers_Form1
         Sections_Tab.BackColor = Color.Transparent
         Students_Tab.BackColor = Color.LightSkyBlue
         Profile_Button.BackColor = Color.Transparent
-        Tabs(Students)
+        Tabs(Student_Teacher)
     End Sub
 
     Private Sub Profile_Button_Click(sender As Object, e As EventArgs) Handles Profile_Button.Click
@@ -49,5 +58,13 @@ Public Class Teachers_Form1
         Students_Tab.BackColor = Color.Transparent
         Profile_Button.BackColor = Color.LightSkyBlue
         Tabs(Profile)
+    End Sub
+
+    Private Sub Teachers_Form1_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        If MsgBox("Are you sure you want to logout?", vbQuestion + vbYesNo) = vbYes Then
+            LogoutClosed()
+        Else
+            e.Cancel = True
+        End If
     End Sub
 End Class

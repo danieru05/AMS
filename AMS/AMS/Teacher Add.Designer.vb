@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Teacher_ADD
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Teacher_ADD
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Teacher_ADD))
         Me.Email = New System.Windows.Forms.Label()
@@ -39,6 +39,8 @@ Partial Class Teacher_ADD
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Sec_Box = New System.Windows.Forms.CheckedListBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -162,7 +164,7 @@ Partial Class Teacher_ADD
         Me.SignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SignIn.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SignIn.ForeColor = System.Drawing.Color.White
-        Me.SignIn.Location = New System.Drawing.Point(146, 378)
+        Me.SignIn.Location = New System.Drawing.Point(136, 481)
         Me.SignIn.Name = "SignIn"
         Me.SignIn.Size = New System.Drawing.Size(113, 36)
         Me.SignIn.TabIndex = 29
@@ -203,11 +205,33 @@ Partial Class Teacher_ADD
         Me.Label8.TabIndex = 4
         Me.Label8.Text = "NEW TEACHER"
         '
+        'Sec_Box
+        '
+        Me.Sec_Box.AllowDrop = True
+        Me.Sec_Box.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Sec_Box.FormattingEnabled = True
+        Me.Sec_Box.Location = New System.Drawing.Point(107, 358)
+        Me.Sec_Box.Name = "Sec_Box"
+        Me.Sec_Box.Size = New System.Drawing.Size(274, 100)
+        Me.Sec_Box.TabIndex = 31
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(16, 358)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(79, 23)
+        Me.Label6.TabIndex = 33
+        Me.Label6.Text = "Sections:"
+        '
         'Teacher_ADD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(400, 438)
+        Me.ClientSize = New System.Drawing.Size(400, 529)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Sec_Box)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.SignIn)
         Me.Controls.Add(Me.Subj_ComboBox)
@@ -248,4 +272,6 @@ Partial Class Teacher_ADD
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
+    Friend WithEvents Sec_Box As CheckedListBox
+    Friend WithEvents Label6 As Label
 End Class

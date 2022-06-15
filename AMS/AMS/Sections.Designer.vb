@@ -31,9 +31,9 @@ Partial Class Sections
         Me.Section_DataGrid = New System.Windows.Forms.DataGridView()
         Me.Section = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Display_Panel = New System.Windows.Forms.Panel()
+        Me.Delete_Button = New System.Windows.Forms.Button()
         Me.Add_Button = New System.Windows.Forms.Button()
         Me.Back_Button = New System.Windows.Forms.Button()
-        Me.Delete_Button = New System.Windows.Forms.Button()
         CType(Me.Section_DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Display_Panel.SuspendLayout()
         Me.SuspendLayout()
@@ -116,6 +116,22 @@ Partial Class Sections
         Me.Display_Panel.Size = New System.Drawing.Size(871, 577)
         Me.Display_Panel.TabIndex = 3
         '
+        'Delete_Button
+        '
+        Me.Delete_Button.BackColor = System.Drawing.Color.SteelBlue
+        Me.Delete_Button.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Delete_Button.FlatAppearance.BorderSize = 0
+        Me.Delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Delete_Button.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Delete_Button.ForeColor = System.Drawing.Color.White
+        Me.Delete_Button.Location = New System.Drawing.Point(775, 43)
+        Me.Delete_Button.Name = "Delete_Button"
+        Me.Delete_Button.Size = New System.Drawing.Size(96, 28)
+        Me.Delete_Button.TabIndex = 12
+        Me.Delete_Button.Text = "Delete"
+        Me.Delete_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Delete_Button.UseVisualStyleBackColor = False
+        '
         'Add_Button
         '
         Me.Add_Button.BackColor = System.Drawing.Color.SteelBlue
@@ -144,22 +160,6 @@ Partial Class Sections
         Me.Back_Button.Text = "Back"
         Me.Back_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Back_Button.UseVisualStyleBackColor = True
-        '
-        'Delete_Button
-        '
-        Me.Delete_Button.BackColor = System.Drawing.Color.SteelBlue
-        Me.Delete_Button.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Delete_Button.FlatAppearance.BorderSize = 0
-        Me.Delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Delete_Button.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Delete_Button.ForeColor = System.Drawing.Color.White
-        Me.Delete_Button.Location = New System.Drawing.Point(775, 43)
-        Me.Delete_Button.Name = "Delete_Button"
-        Me.Delete_Button.Size = New System.Drawing.Size(96, 28)
-        Me.Delete_Button.TabIndex = 12
-        Me.Delete_Button.Text = "Delete"
-        Me.Delete_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Delete_Button.UseVisualStyleBackColor = False
         '
         'Sections
         '

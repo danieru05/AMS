@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Teachers_Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Teachers_Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Teachers_Form1))
@@ -37,6 +37,7 @@ Partial Class Teachers_Form1
         Me.Title = New System.Windows.Forms.Label()
         Me.LogOut_Button = New System.Windows.Forms.Button()
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Teachers_Form.SuspendLayout()
         Me.SuspendLayout()
@@ -99,6 +100,7 @@ Partial Class Teachers_Form1
         '
         Me.Teachers_Form.BackColor = System.Drawing.Color.Turquoise
         Me.Teachers_Form.BackgroundImage = CType(resources.GetObject("Teachers_Form.BackgroundImage"), System.Drawing.Image)
+        Me.Teachers_Form.Controls.Add(Me.Label1)
         Me.Teachers_Form.Controls.Add(Me.Profile_Button)
         Me.Teachers_Form.Controls.Add(Me.Overview_Tab)
         Me.Teachers_Form.Controls.Add(Me.Students_Tab)
@@ -235,6 +237,15 @@ Partial Class Teachers_Form1
         '
         Me.Timer.Enabled = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(99, 140)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Label1"
+        '
         'Teachers_Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -268,4 +279,5 @@ Partial Class Teachers_Form1
     Friend WithEvents Title As Label
     Friend WithEvents LogOut_Button As Button
     Friend WithEvents Timer As Timer
+    Friend WithEvents Label1 As Label
 End Class

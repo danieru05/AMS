@@ -37,7 +37,7 @@ Public Class Sections
     Private Sub Search_TextChanged(sender As Object, e As EventArgs) Handles Search.TextChanged
         If Search.Enabled = True Then
             Section_DataGrid.Rows.Clear()
-            Dim cmd As New OleDbCommand("Select [Course Name] from Course where [Course Name] like '%" & Search.Text & "%'", conn)
+            Dim cmd As New OleDbCommand("Select [Course Name] from Course where [Course Name] like '" & Search.Text & "%'", conn)
             Dim dr As OleDbDataReader
             dr = cmd.ExecuteReader
             While dr.Read
@@ -113,4 +113,5 @@ Public Class Sections
         Dim row As DataGridViewRow = Section_DataGrid.Rows(e.RowIndex)
         TheName = row.Cells(0).Value.ToString()
     End Sub
+
 End Class

@@ -35,7 +35,7 @@ Public Class Departments
     Private Sub Search_TextChanged(sender As Object, e As EventArgs) Handles Search.TextChanged
         If Add_Button.Text = "Add" And Update_Button.Text = "Update" Then
             Department_DataGrid.Rows.Clear()
-            Dim cmd As New OleDbCommand("Select Department from Department where Department like '%" & Search.Text & "%'", conn)
+            Dim cmd As New OleDbCommand("Select Department from Department where Department like '" & Search.Text & "%'", conn)
             Dim dr As OleDbDataReader
             dr = cmd.ExecuteReader
             While dr.Read

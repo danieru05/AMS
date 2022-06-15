@@ -202,11 +202,11 @@ Partial Class Admin
         '
         Me.Title.AutoSize = True
         Me.Title.BackColor = System.Drawing.Color.Transparent
-        Me.Title.Font = New System.Drawing.Font("Microsoft Sans Serif", 45.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Title.Font = New System.Drawing.Font("Crique Grotesk Medium", 45.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Title.ForeColor = System.Drawing.Color.White
         Me.Title.Location = New System.Drawing.Point(36, 50)
         Me.Title.Name = "Title"
-        Me.Title.Size = New System.Drawing.Size(163, 69)
+        Me.Title.Size = New System.Drawing.Size(158, 69)
         Me.Title.TabIndex = 6
         Me.Title.Text = "AMS"
         '

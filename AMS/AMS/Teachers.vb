@@ -16,9 +16,9 @@ Public Class Teachers
     Private Sub Search_TextChanged(sender As Object, e As EventArgs) Handles Search.TextChanged
         Teachers_DataGrid.Rows.Clear()
         Dim cmd As New OleDbCommand("select * from Teacher where 
-        [Teacher ID] like '%" & Search.Text & "%' or [Last Name] like '%" & Search.Text & "%' or 
-        [First Name] like '%" & Search.Text & "%' or [Middle Name] like '%" & Search.Text & "%' or
-        [Department] like '%" & Search.Text & "%' or [Subject Name] like '%" & Search.Text & "%'", conn)
+        [Teacher ID] like '" & Search.Text & "%' or [Last Name] like '" & Search.Text & "%' or 
+        [First Name] like '" & Search.Text & "%' or [Middle Name] like '" & Search.Text & "%' or
+        [Department] like '" & Search.Text & "%' or [Subject Name] like '" & Search.Text & "%'", conn)
         Dim dr As OleDbDataReader
         dr = cmd.ExecuteReader
         While dr.Read()

@@ -105,3 +105,39 @@ C:\Users\Jovid Jose\Downloads\AMS\AMS\obj\Debug\AMS.exe
 C:\Users\Jovid Jose\Downloads\AMS\AMS\obj\Debug\AMS.xml
 C:\Users\Jovid Jose\Downloads\AMS\AMS\obj\Debug\AMS.pdb
 C:\Users\Jovid Jose\Downloads\AMS\AMS\obj\Debug\AMS.Form1.resources
+D:\johnel\Programs\AMS\AMS\AMS\bin\Debug\AMS.accdb
+D:\johnel\Programs\AMS\AMS\AMS\bin\Debug\AMS.exe.config
+D:\johnel\Programs\AMS\AMS\AMS\bin\Debug\AMS.exe
+D:\johnel\Programs\AMS\AMS\AMS\bin\Debug\AMS.pdb
+D:\johnel\Programs\AMS\AMS\AMS\bin\Debug\AMS.xml
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.vbproj.AssemblyReference.cache
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.vbproj.SuggestedBindingRedirects.cache
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Admin.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Department___Teachers.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Departments.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Edit_Profile.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Edit_Teacher.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Form1.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Teachers_Form1.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Profile.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Section___Course_Add.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Section___Students.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Sections.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Login.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Resources.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Overview.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Student_Add.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Students.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Teacher_ADD.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Teachers.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Teacher_UpdateProfile.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Update.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.vbproj.GenerateResource.cache
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.vbproj.CoreCompileInputs.cache
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.exe
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.xml
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.pdb
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Section_Teacher.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Student_Teacher.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Section_Attendance.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Attendance_Section.resources

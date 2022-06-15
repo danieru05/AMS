@@ -3,6 +3,7 @@ Module Module1
     Public conn As New OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source=" & Application.StartupPath & "\AMS.accdb")
     Public Username As String
     Public Role As String
+    Public Name As String
     Public opt As Integer
 
     Function Connect()

@@ -103,6 +103,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AMSDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Attendance Section.Designer.vb">
+      <DependentUpon>Attendance Section.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance Section.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Department - Teachers.Designer.vb">
       <DependentUpon>Department - Teachers.vb</DependentUpon>
     </Compile>
@@ -131,6 +137,24 @@
       <DependentUpon>Edit Student.vb</DependentUpon>
     </Compile>
     <Compile Include="Edit Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Section Attendance.Designer.vb">
+      <DependentUpon>Section Attendance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Section Attendance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Section Teacher.Designer.vb">
+      <DependentUpon>Section Teacher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Section Teacher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student Teacher.Designer.vb">
+      <DependentUpon>Student Teacher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Student Teacher.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Teachers Form.Designer.vb">
@@ -234,6 +258,9 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Attendance Section.resx">
+      <DependentUpon>Attendance Section.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Department - Teachers.resx">
       <DependentUpon>Department - Teachers.vb</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +275,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edit Student.resx">
       <DependentUpon>Edit Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Section Attendance.resx">
+      <DependentUpon>Section Attendance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Section Teacher.resx">
+      <DependentUpon>Section Teacher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student Teacher.resx">
+      <DependentUpon>Student Teacher.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teachers Form.resx">
       <DependentUpon>Teachers Form.vb</DependentUpon>

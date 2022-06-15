@@ -37,7 +37,17 @@ Represents a strongly typed in-memory cache of data.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:AMS.AMSDataSet.AMSDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:AMS.AMSDataSet.AttendanceDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AMS.AMSDataSet.Check_InDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -53,6 +63,11 @@ Represents the strongly named DataTable class.
 </summary>
 </member>
 <member name="T:AMS.AMSDataSet.SectionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:AMS.AMSDataSet.Sections_HandledDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -82,7 +97,17 @@ Represents the strongly named DataTable class.
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:AMS.AMSDataSet.AMSRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:AMS.AMSDataSet.AttendanceRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AMS.AMSDataSet.Check_InRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -98,6 +123,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:AMS.AMSDataSet.SectionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AMS.AMSDataSet.Sections_HandledRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -127,7 +157,17 @@ Represents strongly named DataRow class.
 Row event argument class
 </summary>
 </member>
+<member name="T:AMS.AMSDataSet.AMSRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:AMS.AMSDataSet.AttendanceRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AMS.AMSDataSet.Check_InRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -143,6 +183,11 @@ Row event argument class
 </summary>
 </member>
 <member name="T:AMS.AMSDataSet.SectionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:AMS.AMSDataSet.Sections_HandledRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -172,7 +217,17 @@ Row event argument class
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
+<member name="T:AMS.AMSDataSetTableAdapters.AMSTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
 <member name="T:AMS.AMSDataSetTableAdapters.AttendanceTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AMS.AMSDataSetTableAdapters.Check_InTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -188,6 +243,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:AMS.AMSDataSetTableAdapters.SectionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AMS.AMSDataSetTableAdapters.Sections_HandledTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

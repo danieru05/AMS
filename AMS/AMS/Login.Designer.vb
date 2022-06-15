@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Login
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Login
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.Label1 = New System.Windows.Forms.Label()
@@ -31,6 +31,7 @@ Partial Class Login
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.AMS = New System.Windows.Forms.Label()
         Me.User_Label = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -125,6 +126,16 @@ Partial Class Login
         Me.User_Label.TabIndex = 2
         Me.User_Label.Text = "Username:"
         '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(461, 12)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(249, 25)
+        Me.DateTimePicker1.TabIndex = 55
+        Me.DateTimePicker1.Value = New Date(2022, 6, 17, 0, 0, 0, 0)
+        Me.DateTimePicker1.Visible = False
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -132,6 +143,7 @@ Partial Class Login
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(735, 412)
+        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.SignIn)
         Me.Controls.Add(Me.Pass)
         Me.Controls.Add(Me.User)
@@ -160,4 +172,5 @@ Partial Class Login
     Friend WithEvents Pass As TextBox
     Friend WithEvents SignIn As Button
     Friend WithEvents User_Label As Label
+    Friend WithEvents DateTimePicker1 As DateTimePicker
 End Class

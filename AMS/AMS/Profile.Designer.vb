@@ -34,18 +34,18 @@ Partial Class Profile
         Me.MiddleName = New System.Windows.Forms.Label()
         Me.Email = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Edit = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Teacher_Panel = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Dept = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Subj = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Sec = New System.Windows.Forms.Label()
+        Me.Dept = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Edit = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Sec = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Teacher_Panel.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -168,6 +168,70 @@ Partial Class Profile
         Me.Panel1.Size = New System.Drawing.Size(855, 280)
         Me.Panel1.TabIndex = 10
         '
+        'Teacher_Panel
+        '
+        Me.Teacher_Panel.Controls.Add(Me.Sec)
+        Me.Teacher_Panel.Controls.Add(Me.Label10)
+        Me.Teacher_Panel.Controls.Add(Me.Label8)
+        Me.Teacher_Panel.Controls.Add(Me.Subj)
+        Me.Teacher_Panel.Controls.Add(Me.Dept)
+        Me.Teacher_Panel.Controls.Add(Me.Label6)
+        Me.Teacher_Panel.Location = New System.Drawing.Point(362, 3)
+        Me.Teacher_Panel.Name = "Teacher_Panel"
+        Me.Teacher_Panel.Size = New System.Drawing.Size(466, 274)
+        Me.Teacher_Panel.TabIndex = 10
+        Me.Teacher_Panel.Visible = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(17, 126)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(149, 23)
+        Me.Label10.TabIndex = 13
+        Me.Label10.Text = "Section Handled:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(17, 76)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(75, 23)
+        Me.Label8.TabIndex = 11
+        Me.Label8.Text = "Subject:"
+        '
+        'Subj
+        '
+        Me.Subj.AutoSize = True
+        Me.Subj.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Subj.Location = New System.Drawing.Point(100, 76)
+        Me.Subj.Name = "Subj"
+        Me.Subj.Size = New System.Drawing.Size(100, 23)
+        Me.Subj.TabIndex = 12
+        Me.Subj.Text = "Last Name"
+        '
+        'Dept
+        '
+        Me.Dept.AutoSize = True
+        Me.Dept.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Dept.Location = New System.Drawing.Point(141, 26)
+        Me.Dept.Name = "Dept"
+        Me.Dept.Size = New System.Drawing.Size(92, 23)
+        Me.Dept.TabIndex = 11
+        Me.Dept.Text = "Admin ID:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(17, 26)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(118, 23)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Department:"
+        '
         'Edit
         '
         Me.Edit.BackColor = System.Drawing.Color.SteelBlue
@@ -193,79 +257,15 @@ Partial Class Profile
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
         '
-        'Teacher_Panel
-        '
-        Me.Teacher_Panel.Controls.Add(Me.Label10)
-        Me.Teacher_Panel.Controls.Add(Me.Sec)
-        Me.Teacher_Panel.Controls.Add(Me.Label8)
-        Me.Teacher_Panel.Controls.Add(Me.Subj)
-        Me.Teacher_Panel.Controls.Add(Me.Dept)
-        Me.Teacher_Panel.Controls.Add(Me.Label6)
-        Me.Teacher_Panel.Location = New System.Drawing.Point(362, 3)
-        Me.Teacher_Panel.Name = "Teacher_Panel"
-        Me.Teacher_Panel.Size = New System.Drawing.Size(466, 274)
-        Me.Teacher_Panel.TabIndex = 10
-        Me.Teacher_Panel.Visible = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(17, 26)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(118, 23)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Department:"
-        '
-        'Dept
-        '
-        Me.Dept.AutoSize = True
-        Me.Dept.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Dept.Location = New System.Drawing.Point(141, 26)
-        Me.Dept.Name = "Dept"
-        Me.Dept.Size = New System.Drawing.Size(92, 23)
-        Me.Dept.TabIndex = 11
-        Me.Dept.Text = "Admin ID:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(17, 76)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(75, 23)
-        Me.Label8.TabIndex = 11
-        Me.Label8.Text = "Subject:"
-        '
-        'Subj
-        '
-        Me.Subj.AutoSize = True
-        Me.Subj.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Subj.Location = New System.Drawing.Point(100, 76)
-        Me.Subj.Name = "Subj"
-        Me.Subj.Size = New System.Drawing.Size(100, 23)
-        Me.Subj.TabIndex = 12
-        Me.Subj.Text = "Last Name"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(17, 126)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(149, 23)
-        Me.Label10.TabIndex = 13
-        Me.Label10.Text = "Section Handled:"
-        '
         'Sec
         '
-        Me.Sec.AutoSize = True
         Me.Sec.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Sec.FormattingEnabled = True
+        Me.Sec.ItemHeight = 23
         Me.Sec.Location = New System.Drawing.Point(172, 126)
         Me.Sec.Name = "Sec"
-        Me.Sec.Size = New System.Drawing.Size(100, 23)
-        Me.Sec.TabIndex = 14
-        Me.Sec.Text = "Last Name"
+        Me.Sec.Size = New System.Drawing.Size(276, 119)
+        Me.Sec.TabIndex = 35
         '
         'Profile
         '
@@ -280,9 +280,9 @@ Partial Class Profile
         Me.Text = "Form1"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Teacher_Panel.ResumeLayout(False)
         Me.Teacher_Panel.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -302,9 +302,9 @@ Partial Class Profile
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Teacher_Panel As Panel
     Friend WithEvents Label10 As Label
-    Friend WithEvents Sec As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Subj As Label
     Friend WithEvents Dept As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents Sec As ListBox
 End Class
