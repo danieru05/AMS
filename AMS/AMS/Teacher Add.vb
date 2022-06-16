@@ -50,8 +50,8 @@ Public Class Teacher_ADD
     End Sub
 
     Private Sub SignIn_Click(sender As Object, e As EventArgs) Handles SignIn.Click
-        Dim add As New OleDbCommand("Insert into Teacher([user], [pass], [Last Name], [First Name], [Middle Name], [Email], [Department], [Subject Name]) 
-            values('username', 'password', '" & LName_TextBox.Text & "','" & FName_TextBox.Text & "','" & MName_TextBox.Text & "','" & Email_TextBox.Text & "','" & Dept_ComboBox.Text & "','" & Subj_ComboBox.Text & "')", conn)
+        Dim add As New OleDbCommand("Insert into Teacher([user], [pass], [Last Name], [First Name], [Middle Name], [Email], [Department], [Subject Name], [Image]) 
+            values('" & LName_TextBox.Text & "','" & LName_TextBox.Text & "','" & LName_TextBox.Text & "','" & LName_TextBox.Text & "','" & MName_TextBox.Text & "','" & Email_TextBox.Text & "','" & Dept_ComboBox.Text & "','" & Subj_ComboBox.Text & "','-')", conn)
         add.ExecuteNonQuery()
         For num As Integer = 0 To Sec_Box.CheckedItems.Count - 1
             Dim secteach As New OleDbCommand("Insert into [Sections Handled]([Section], [Teacher]) 

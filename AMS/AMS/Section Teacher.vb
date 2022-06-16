@@ -34,6 +34,7 @@ Public Class Section_Teacher
         Save_Button.Visible = True
         Students_DataGrid.Visible = True
         Students_DataGrid.Rows.Clear()
+        Dim opt As Integer = 0
         Dim attend As New OleDbCommand("Select [Attendance] from Attendance", conn)
         Dim myreader1 As OleDbDataReader = attend.ExecuteReader
         Dim write As New OleDbCommand("SELECT * FROM AMS where [Teacher] ='" & Overview.Full_Name.Text & "' and [Petsa] = '" & DateTimePicker1.Value.Date.ToString & "' and [Section] ='" & Search.Text & "'", conn)
@@ -44,7 +45,25 @@ Public Class Section_Teacher
             While myreader1.Read
                 Attendance.Items.Add(myreader1("Attendance"))
             End While
+            If myreader2("Attendance") = "Present" Then
+                Dim CellBox As DataGridViewComboBoxCell = CType(Students_DataGrid.Rows(opt).Cells(2), DataGridViewComboBoxCell)
+                CellBox.Value = Attendance.Items(0)
+            End If
+            If myreader2("Attendance") = "Late" Then
+                Dim CellBox As DataGridViewComboBoxCell = CType(Students_DataGrid.Rows(opt).Cells(2), DataGridViewComboBoxCell)
+                CellBox.Value = Attendance.Items(1)
+            End If
+            If myreader2("Attendance") = "Absent" Then
+                Dim CellBox As DataGridViewComboBoxCell = CType(Students_DataGrid.Rows(opt).Cells(2), DataGridViewComboBoxCell)
+                CellBox.Value = Attendance.Items(2)
+            End If
+            If myreader2("Attendance") = "Excuse" Then
+                Dim CellBox As DataGridViewComboBoxCell = CType(Students_DataGrid.Rows(opt).Cells(2), DataGridViewComboBoxCell)
+                CellBox.Value = Attendance.Items(3)
+            End If
+            opt += 1
         End While
+
     End Sub
 
     Private Sub Back_Button_Click(sender As Object, e As EventArgs) Handles Back_Button.Click
@@ -73,7 +92,7 @@ Public Class Section_Teacher
             opt += 1
         End While
         MsgBox("Attendance Saved Successfully!")
+        Student_Teacher.Attend()
+        Overview.LoadTeacherChart()
     End Sub
-
-
 End Class

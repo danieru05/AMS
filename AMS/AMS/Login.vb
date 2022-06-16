@@ -42,7 +42,7 @@ Public Class Login
                         While myreader2.Read()
                             Dim name As String = myreader2("Last Name") + ", " + myreader2("First Name") + " " + myreader2("Middle Name")
                             Dim add As New OleDbCommand("Insert into AMS([Petsa], [Student ID], [Student Name], [Section], [Attendance], [Teacher]) 
-                            values('" & DateTimePicker1.Value.Date.ToString & "','" & myreader2.Item("Student ID") & "','" & name & "','" & myreader2.Item("Section") & "','---','" & Overview.Full_Name.Text & "')", conn)
+                            values('" & DateTimePicker1.Value.Date.ToString & "','" & myreader2.Item("Student ID") & "','" & name & "','" & myreader2.Item("Section") & "','-','" & Overview.Full_Name.Text & "')", conn)
                             add.ExecuteNonQuery()
                         End While
                     End While

@@ -1,6 +1,5 @@
 ﻿Imports System.Data.OleDb
 Public Class Teacher_UpdateProfile
-    Dim noice As String
     Sub LoadProfile()
         Dim cmd As New OleDbCommand("select * from Teacher where user ='" & Username & "'", conn)
         Dim dr As OleDbDataReader
@@ -37,6 +36,4 @@ Public Class Teacher_UpdateProfile
         LoadProfile()
         Me.Close()
     End Sub
-
-
 End Class

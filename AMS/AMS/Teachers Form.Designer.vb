@@ -37,7 +37,6 @@ Partial Class Teachers_Form1
         Me.Title = New System.Windows.Forms.Label()
         Me.LogOut_Button = New System.Windows.Forms.Button()
         Me.Timer = New System.Windows.Forms.Timer(Me.components)
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Teachers_Form.SuspendLayout()
         Me.SuspendLayout()
@@ -100,7 +99,6 @@ Partial Class Teachers_Form1
         '
         Me.Teachers_Form.BackColor = System.Drawing.Color.Turquoise
         Me.Teachers_Form.BackgroundImage = CType(resources.GetObject("Teachers_Form.BackgroundImage"), System.Drawing.Image)
-        Me.Teachers_Form.Controls.Add(Me.Label1)
         Me.Teachers_Form.Controls.Add(Me.Profile_Button)
         Me.Teachers_Form.Controls.Add(Me.Overview_Tab)
         Me.Teachers_Form.Controls.Add(Me.Students_Tab)
@@ -237,15 +235,6 @@ Partial Class Teachers_Form1
         '
         Me.Timer.Enabled = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(99, 140)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Label1"
-        '
         'Teachers_Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -254,6 +243,7 @@ Partial Class Teachers_Form1
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Display_Panel)
         Me.Controls.Add(Me.Teachers_Form)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Teachers_Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -279,5 +269,4 @@ Partial Class Teachers_Form1
     Friend WithEvents Title As Label
     Friend WithEvents LogOut_Button As Button
     Friend WithEvents Timer As Timer
-    Friend WithEvents Label1 As Label
 End Class

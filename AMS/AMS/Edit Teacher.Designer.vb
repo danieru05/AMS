@@ -36,6 +36,7 @@ Partial Class Edit_Teacher
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Delete_Button = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'SignIn
@@ -169,11 +170,27 @@ Partial Class Edit_Teacher
         Me.Label4.TabIndex = 34
         Me.Label4.Text = "Email:"
         '
+        'Delete_Button
+        '
+        Me.Delete_Button.BackColor = System.Drawing.Color.Crimson
+        Me.Delete_Button.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Delete_Button.FlatAppearance.BorderSize = 0
+        Me.Delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Delete_Button.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Delete_Button.ForeColor = System.Drawing.Color.White
+        Me.Delete_Button.Location = New System.Drawing.Point(18, 315)
+        Me.Delete_Button.Name = "Delete_Button"
+        Me.Delete_Button.Size = New System.Drawing.Size(104, 36)
+        Me.Delete_Button.TabIndex = 64
+        Me.Delete_Button.Text = "Delete"
+        Me.Delete_Button.UseVisualStyleBackColor = False
+        '
         'Edit_Teacher
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(400, 370)
+        Me.Controls.Add(Me.Delete_Button)
         Me.Controls.Add(Me.SignIn)
         Me.Controls.Add(Me.Subj_ComboBox)
         Me.Controls.Add(Me.Dept_ComboBox)
@@ -207,4 +224,5 @@ Partial Class Edit_Teacher
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents Delete_Button As Button
 End Class

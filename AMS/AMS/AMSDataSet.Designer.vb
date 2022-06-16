@@ -820,7 +820,7 @@ Partial Public Class AMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddAdminRow(ByVal user As String, ByVal pass As String, ByVal Last_Name As String, ByVal First_Name As String, ByVal Middle_Name As String, ByVal email As String, ByVal Image() As Byte) As AdminRow
+        Public Overloads Function AddAdminRow(ByVal user As String, ByVal pass As String, ByVal Last_Name As String, ByVal First_Name As String, ByVal Middle_Name As String, ByVal email As String, ByVal Image As String) As AdminRow
             Dim rowAdminRow As AdminRow = CType(Me.NewRow,AdminRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, user, pass, Last_Name, First_Name, Middle_Name, email, Image}
             rowAdminRow.ItemArray = columnValuesArray
@@ -878,7 +878,7 @@ Partial Public Class AMSDataSet
             MyBase.Columns.Add(Me.columnMiddle_Name)
             Me.columnemail = New Global.System.Data.DataColumn("email", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnemail)
-            Me.columnImage = New Global.System.Data.DataColumn("Image", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnImage = New Global.System.Data.DataColumn("Image", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnImage)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnAdmin_ID}, true))
             Me.columnAdmin_ID.AutoIncrement = true
@@ -892,6 +892,7 @@ Partial Public Class AMSDataSet
             Me.columnFirst_Name.MaxLength = 255
             Me.columnMiddle_Name.MaxLength = 255
             Me.columnemail.MaxLength = 255
+            Me.columnImage.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1033,13 +1034,13 @@ Partial Public Class AMSDataSet
         
         Private columnPetsa As Global.System.Data.DataColumn
         
-        Private columnAttendance As Global.System.Data.DataColumn
-        
         Private columnStudent_ID As Global.System.Data.DataColumn
+        
+        Private columnStudent_Name As Global.System.Data.DataColumn
         
         Private columnSection As Global.System.Data.DataColumn
         
-        Private columnStudent_Name As Global.System.Data.DataColumn
+        Private columnAttendance As Global.System.Data.DataColumn
         
         Private columnTeacher As Global.System.Data.DataColumn
         
@@ -1096,17 +1097,17 @@ Partial Public Class AMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property AttendanceColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property Student_IDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnAttendance
+                Return Me.columnStudent_ID
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Student_IDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property Student_NameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnStudent_ID
+                Return Me.columnStudent_Name
             End Get
         End Property
         
@@ -1120,9 +1121,9 @@ Partial Public Class AMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Student_NameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property AttendanceColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnStudent_Name
+                Return Me.columnAttendance
             End Get
         End Property
         
@@ -1171,9 +1172,9 @@ Partial Public Class AMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddAMSRow(ByVal Petsa As String, ByVal Attendance As String, ByVal Student_ID As String, ByVal Section As String, ByVal Student_Name As String, ByVal Teacher As String) As AMSRow
+        Public Overloads Function AddAMSRow(ByVal Petsa As String, ByVal Student_ID As String, ByVal Student_Name As String, ByVal Section As String, ByVal Attendance As String, ByVal Teacher As String) As AMSRow
             Dim rowAMSRow As AMSRow = CType(Me.NewRow,AMSRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Petsa, Attendance, Student_ID, Section, Student_Name, Teacher}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Petsa, Student_ID, Student_Name, Section, Attendance, Teacher}
             rowAMSRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowAMSRow)
             Return rowAMSRow
@@ -1204,10 +1205,10 @@ Partial Public Class AMSDataSet
         Friend Sub InitVars()
             Me.columnID = MyBase.Columns("ID")
             Me.columnPetsa = MyBase.Columns("Petsa")
-            Me.columnAttendance = MyBase.Columns("Attendance")
             Me.columnStudent_ID = MyBase.Columns("Student ID")
-            Me.columnSection = MyBase.Columns("Section")
             Me.columnStudent_Name = MyBase.Columns("Student Name")
+            Me.columnSection = MyBase.Columns("Section")
+            Me.columnAttendance = MyBase.Columns("Attendance")
             Me.columnTeacher = MyBase.Columns("Teacher")
         End Sub
         
@@ -1218,14 +1219,14 @@ Partial Public Class AMSDataSet
             MyBase.Columns.Add(Me.columnID)
             Me.columnPetsa = New Global.System.Data.DataColumn("Petsa", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPetsa)
-            Me.columnAttendance = New Global.System.Data.DataColumn("Attendance", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnAttendance)
             Me.columnStudent_ID = New Global.System.Data.DataColumn("Student ID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnStudent_ID)
-            Me.columnSection = New Global.System.Data.DataColumn("Section", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnSection)
             Me.columnStudent_Name = New Global.System.Data.DataColumn("Student Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnStudent_Name)
+            Me.columnSection = New Global.System.Data.DataColumn("Section", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSection)
+            Me.columnAttendance = New Global.System.Data.DataColumn("Attendance", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAttendance)
             Me.columnTeacher = New Global.System.Data.DataColumn("Teacher", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTeacher)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
@@ -1235,10 +1236,10 @@ Partial Public Class AMSDataSet
             Me.columnID.AllowDBNull = false
             Me.columnID.Unique = true
             Me.columnPetsa.MaxLength = 255
-            Me.columnAttendance.MaxLength = 255
             Me.columnStudent_ID.MaxLength = 255
-            Me.columnSection.MaxLength = 255
             Me.columnStudent_Name.MaxLength = 255
+            Me.columnSection.MaxLength = 255
+            Me.columnAttendance.MaxLength = 255
             Me.columnTeacher.MaxLength = 255
         End Sub
         
@@ -4023,6 +4024,8 @@ Partial Public Class AMSDataSet
         
         Private columnSubject_Name As Global.System.Data.DataColumn
         
+        Private columnImage As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -4131,6 +4134,14 @@ Partial Public Class AMSDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property ImageColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnImage
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -4167,9 +4178,9 @@ Partial Public Class AMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddTeacherRow(ByVal user As String, ByVal pass As String, ByVal Last_Name As String, ByVal First_Name As String, ByVal Middle_Name As String, ByVal Email As String, ByVal Department As String, ByVal Subject_Name As String) As TeacherRow
+        Public Overloads Function AddTeacherRow(ByVal user As String, ByVal pass As String, ByVal Last_Name As String, ByVal First_Name As String, ByVal Middle_Name As String, ByVal Email As String, ByVal Department As String, ByVal Subject_Name As String, ByVal Image As String) As TeacherRow
             Dim rowTeacherRow As TeacherRow = CType(Me.NewRow,TeacherRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, user, pass, Last_Name, First_Name, Middle_Name, Email, Department, Subject_Name}
+            Dim columnValuesArray() As Object = New Object() {Nothing, user, pass, Last_Name, First_Name, Middle_Name, Email, Department, Subject_Name, Image}
             rowTeacherRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowTeacherRow)
             Return rowTeacherRow
@@ -4207,6 +4218,7 @@ Partial Public Class AMSDataSet
             Me.columnEmail = MyBase.Columns("Email")
             Me.columnDepartment = MyBase.Columns("Department")
             Me.columnSubject_Name = MyBase.Columns("Subject Name")
+            Me.columnImage = MyBase.Columns("Image")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4230,6 +4242,8 @@ Partial Public Class AMSDataSet
             MyBase.Columns.Add(Me.columnDepartment)
             Me.columnSubject_Name = New Global.System.Data.DataColumn("Subject Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSubject_Name)
+            Me.columnImage = New Global.System.Data.DataColumn("Image", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnImage)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnTeacher_ID}, true))
             Me.columnTeacher_ID.AutoIncrement = true
             Me.columnTeacher_ID.AutoIncrementSeed = -1
@@ -4244,6 +4258,7 @@ Partial Public Class AMSDataSet
             Me.columnEmail.MaxLength = 255
             Me.columnDepartment.MaxLength = 255
             Me.columnSubject_Name.MaxLength = 255
+            Me.columnImage.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4491,10 +4506,10 @@ Partial Public Class AMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Image() As Byte()
+        Public Property Image() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableAdmin.ImageColumn),Byte())
+                    Return CType(Me(Me.tableAdmin.ImageColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Image' in table 'Admin' is DBNull.", e)
                 End Try
@@ -4632,21 +4647,6 @@ Partial Public Class AMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Attendance() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableAMS.AttendanceColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Attendance' in table 'AMS' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableAMS.AttendanceColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property Student_ID() As String
             Get
                 Try 
@@ -4657,6 +4657,21 @@ Partial Public Class AMSDataSet
             End Get
             Set
                 Me(Me.tableAMS.Student_IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Student_Name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAMS.Student_NameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Student Name' in table 'AMS' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAMS.Student_NameColumn) = value
             End Set
         End Property
         
@@ -4677,16 +4692,16 @@ Partial Public Class AMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Student_Name() As String
+        Public Property Attendance() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableAMS.Student_NameColumn),String)
+                    Return CType(Me(Me.tableAMS.AttendanceColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Student Name' in table 'AMS' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Attendance' in table 'AMS' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableAMS.Student_NameColumn) = value
+                Me(Me.tableAMS.AttendanceColumn) = value
             End Set
         End Property
         
@@ -4719,18 +4734,6 @@ Partial Public Class AMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsAttendanceNull() As Boolean
-            Return Me.IsNull(Me.tableAMS.AttendanceColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetAttendanceNull()
-            Me(Me.tableAMS.AttendanceColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsStudent_IDNull() As Boolean
             Return Me.IsNull(Me.tableAMS.Student_IDColumn)
         End Function
@@ -4739,6 +4742,18 @@ Partial Public Class AMSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetStudent_IDNull()
             Me(Me.tableAMS.Student_IDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsStudent_NameNull() As Boolean
+            Return Me.IsNull(Me.tableAMS.Student_NameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetStudent_NameNull()
+            Me(Me.tableAMS.Student_NameColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4755,14 +4770,14 @@ Partial Public Class AMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsStudent_NameNull() As Boolean
-            Return Me.IsNull(Me.tableAMS.Student_NameColumn)
+        Public Function IsAttendanceNull() As Boolean
+            Return Me.IsNull(Me.tableAMS.AttendanceColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetStudent_NameNull()
-            Me(Me.tableAMS.Student_NameColumn) = Global.System.Convert.DBNull
+        Public Sub SetAttendanceNull()
+            Me(Me.tableAMS.AttendanceColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5655,6 +5670,21 @@ Partial Public Class AMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Image() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableTeacher.ImageColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Image' in table 'Teacher' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTeacher.ImageColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsuserNull() As Boolean
             Return Me.IsNull(Me.tableTeacher.userColumn)
         End Function
@@ -5747,6 +5777,18 @@ Partial Public Class AMSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetSubject_NameNull()
             Me(Me.tableTeacher.Subject_NameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsImageNull() As Boolean
+            Return Me.IsNull(Me.tableTeacher.ImageColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetImageNull()
+            Me(Me.tableTeacher.ImageColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -6327,7 +6369,8 @@ Namespace AMSDataSetTableAdapters
                 "user` = ?)) AND ((? = 1 AND `pass` IS NULL) OR (`pass` = ?)) AND ((? = 1 AND `La"& _ 
                 "st Name` IS NULL) OR (`Last Name` = ?)) AND ((? = 1 AND `First Name` IS NULL) OR"& _ 
                 " (`First Name` = ?)) AND ((? = 1 AND `Middle Name` IS NULL) OR (`Middle Name` = "& _ 
-                "?)) AND ((? = 1 AND `email` IS NULL) OR (`email` = ?)))"
+                "?)) AND ((? = 1 AND `email` IS NULL) OR (`email` = ?)) AND ((? = 1 AND `Image` I"& _ 
+                "S NULL) OR (`Image` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Admin_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Admin ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_user", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -6342,6 +6385,8 @@ Namespace AMSDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Middle_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Middle Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_email", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "email", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_email", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "email", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Image", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Image", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `Admin` (`user`, `pass`, `Last Name`, `First Name`, `Middle Name`, `e"& _ 
@@ -6353,7 +6398,7 @@ Namespace AMSDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("First_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "First Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Middle_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Middle Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("email", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "email", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Image", Global.System.Data.OleDb.OleDbType.LongVarBinary, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Image", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `Admin` SET `user` = ?, `pass` = ?, `Last Name` = ?, `First Name` = ?, `Mi"& _ 
@@ -6361,7 +6406,8 @@ Namespace AMSDataSetTableAdapters
                 " `user` IS NULL) OR (`user` = ?)) AND ((? = 1 AND `pass` IS NULL) OR (`pass` = ?"& _ 
                 ")) AND ((? = 1 AND `Last Name` IS NULL) OR (`Last Name` = ?)) AND ((? = 1 AND `F"& _ 
                 "irst Name` IS NULL) OR (`First Name` = ?)) AND ((? = 1 AND `Middle Name` IS NULL"& _ 
-                ") OR (`Middle Name` = ?)) AND ((? = 1 AND `email` IS NULL) OR (`email` = ?)))"
+                ") OR (`Middle Name` = ?)) AND ((? = 1 AND `email` IS NULL) OR (`email` = ?)) AND"& _ 
+                " ((? = 1 AND `Image` IS NULL) OR (`Image` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("user", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("pass", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "pass", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -6369,7 +6415,7 @@ Namespace AMSDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("First_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "First Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Middle_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Middle Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("email", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "email", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Image", Global.System.Data.OleDb.OleDbType.LongVarBinary, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Image", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Admin_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Admin ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_user", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_user", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -6383,6 +6429,8 @@ Namespace AMSDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Middle_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Middle Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_email", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "email", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_email", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "email", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Image", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Image", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6459,7 +6507,7 @@ Namespace AMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Admin_ID As Integer, ByVal Original_user As String, ByVal Original_pass As String, ByVal Original_Last_Name As String, ByVal Original_First_Name As String, ByVal Original_Middle_Name As String, ByVal Original_email As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Admin_ID As Integer, ByVal Original_user As String, ByVal Original_pass As String, ByVal Original_Last_Name As String, ByVal Original_First_Name As String, ByVal Original_Middle_Name As String, ByVal Original_email As String, ByVal Original_Image As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Admin_ID,Integer)
             If (Original_user Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -6503,6 +6551,13 @@ Namespace AMSDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_email,String)
             End If
+            If (Original_Image Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Image,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6522,7 +6577,7 @@ Namespace AMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal user As String, ByVal pass As String, ByVal Last_Name As String, ByVal First_Name As String, ByVal Middle_Name As String, ByVal email As String, ByVal Image() As Byte) As Integer
+        Public Overloads Overridable Function Insert(ByVal user As String, ByVal pass As String, ByVal Last_Name As String, ByVal First_Name As String, ByVal Middle_Name As String, ByVal email As String, ByVal Image As String) As Integer
             If (user Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -6556,7 +6611,7 @@ Namespace AMSDataSetTableAdapters
             If (Image Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Image,Byte())
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Image,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -6577,7 +6632,7 @@ Namespace AMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal user As String, ByVal pass As String, ByVal Last_Name As String, ByVal First_Name As String, ByVal Middle_Name As String, ByVal email As String, ByVal Image() As Byte, ByVal Original_Admin_ID As Integer, ByVal Original_user As String, ByVal Original_pass As String, ByVal Original_Last_Name As String, ByVal Original_First_Name As String, ByVal Original_Middle_Name As String, ByVal Original_email As String) As Integer
+        Public Overloads Overridable Function Update(ByVal user As String, ByVal pass As String, ByVal Last_Name As String, ByVal First_Name As String, ByVal Middle_Name As String, ByVal email As String, ByVal Image As String, ByVal Original_Admin_ID As Integer, ByVal Original_user As String, ByVal Original_pass As String, ByVal Original_Last_Name As String, ByVal Original_First_Name As String, ByVal Original_Middle_Name As String, ByVal Original_email As String, ByVal Original_Image As String) As Integer
             If (user Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -6611,7 +6666,7 @@ Namespace AMSDataSetTableAdapters
             If (Image Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Image,Byte())
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Image,String)
             End If
             Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Admin_ID,Integer)
             If (Original_user Is Nothing) Then
@@ -6655,6 +6710,13 @@ Namespace AMSDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_email,String)
+            End If
+            If (Original_Image Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Image,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -6801,71 +6863,71 @@ Namespace AMSDataSetTableAdapters
             tableMapping.DataSetTable = "AMS"
             tableMapping.ColumnMappings.Add("ID", "ID")
             tableMapping.ColumnMappings.Add("Petsa", "Petsa")
-            tableMapping.ColumnMappings.Add("Attendance", "Attendance")
             tableMapping.ColumnMappings.Add("Student ID", "Student ID")
-            tableMapping.ColumnMappings.Add("Section", "Section")
             tableMapping.ColumnMappings.Add("Student Name", "Student Name")
+            tableMapping.ColumnMappings.Add("Section", "Section")
+            tableMapping.ColumnMappings.Add("Attendance", "Attendance")
             tableMapping.ColumnMappings.Add("Teacher", "Teacher")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `AMS` WHERE ((`ID` = ?) AND ((? = 1 AND `Petsa` IS NULL) OR (`Petsa` "& _ 
-                "= ?)) AND ((? = 1 AND `Attendance` IS NULL) OR (`Attendance` = ?)) AND ((? = 1 A"& _ 
-                "ND `Student ID` IS NULL) OR (`Student ID` = ?)) AND ((? = 1 AND `Section` IS NUL"& _ 
-                "L) OR (`Section` = ?)) AND ((? = 1 AND `Student Name` IS NULL) OR (`Student Name"& _ 
+                "= ?)) AND ((? = 1 AND `Student ID` IS NULL) OR (`Student ID` = ?)) AND ((? = 1 A"& _ 
+                "ND `Student Name` IS NULL) OR (`Student Name` = ?)) AND ((? = 1 AND `Section` IS"& _ 
+                " NULL) OR (`Section` = ?)) AND ((? = 1 AND `Attendance` IS NULL) OR (`Attendance"& _ 
                 "` = ?)) AND ((? = 1 AND `Teacher` IS NULL) OR (`Teacher` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Petsa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Petsa", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Petsa", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Petsa", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Attendance", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Attendance", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Attendance", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Attendance", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Student_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Student ID", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Student_ID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Student ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Section", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Section", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Section", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Section", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Student_Name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Student Name", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Student_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Student Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Section", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Section", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Section", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Section", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Attendance", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Attendance", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Attendance", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Attendance", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Teacher", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Teacher", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Teacher", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Teacher", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `AMS` (`Petsa`, `Attendance`, `Student ID`, `Section`, `Student Name`"& _ 
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `AMS` (`Petsa`, `Student ID`, `Student Name`, `Section`, `Attendance`"& _ 
                 ", `Teacher`) VALUES (?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Petsa", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Petsa", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Attendance", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Attendance", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Student_ID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Student ID", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Section", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Section", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Student_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Student Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Section", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Section", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Attendance", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Attendance", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Teacher", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Teacher", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `AMS` SET `Petsa` = ?, `Attendance` = ?, `Student ID` = ?, `Section` = ?, "& _ 
-                "`Student Name` = ?, `Teacher` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Petsa` IS N"& _ 
-                "ULL) OR (`Petsa` = ?)) AND ((? = 1 AND `Attendance` IS NULL) OR (`Attendance` = "& _ 
-                "?)) AND ((? = 1 AND `Student ID` IS NULL) OR (`Student ID` = ?)) AND ((? = 1 AND"& _ 
-                " `Section` IS NULL) OR (`Section` = ?)) AND ((? = 1 AND `Student Name` IS NULL) "& _ 
-                "OR (`Student Name` = ?)) AND ((? = 1 AND `Teacher` IS NULL) OR (`Teacher` = ?)))"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `AMS` SET `Petsa` = ?, `Student ID` = ?, `Student Name` = ?, `Section` = ?"& _ 
+                ", `Attendance` = ?, `Teacher` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Petsa` IS N"& _ 
+                "ULL) OR (`Petsa` = ?)) AND ((? = 1 AND `Student ID` IS NULL) OR (`Student ID` = "& _ 
+                "?)) AND ((? = 1 AND `Student Name` IS NULL) OR (`Student Name` = ?)) AND ((? = 1"& _ 
+                " AND `Section` IS NULL) OR (`Section` = ?)) AND ((? = 1 AND `Attendance` IS NULL"& _ 
+                ") OR (`Attendance` = ?)) AND ((? = 1 AND `Teacher` IS NULL) OR (`Teacher` = ?)))"& _ 
                 ""
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Petsa", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Petsa", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Attendance", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Attendance", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Student_ID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Student ID", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Section", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Section", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Student_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Student Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Section", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Section", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Attendance", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Attendance", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Teacher", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Teacher", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Petsa", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Petsa", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Petsa", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Petsa", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Attendance", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Attendance", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Attendance", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Attendance", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Student_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Student ID", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Student_ID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Student ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Section", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Section", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Section", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Section", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Student_Name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Student Name", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Student_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Student Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Section", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Section", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Section", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Section", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Attendance", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Attendance", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Attendance", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Attendance", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Teacher", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Teacher", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Teacher", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Teacher", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
@@ -6883,7 +6945,7 @@ Namespace AMSDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, Petsa, Attendance, [Student ID], [Section], [Student Name], Teacher FR"& _ 
+            Me._commandCollection(0).CommandText = "SELECT ID, Petsa, [Student ID], [Student Name], [Section], Attendance, Teacher FR"& _ 
                 "OM AMS"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
@@ -6944,7 +7006,7 @@ Namespace AMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Petsa As String, ByVal Original_Attendance As String, ByVal Original_Student_ID As String, ByVal Original_Section As String, ByVal Original_Student_Name As String, ByVal Original_Teacher As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Petsa As String, ByVal Original_Student_ID As String, ByVal Original_Student_Name As String, ByVal Original_Section As String, ByVal Original_Attendance As String, ByVal Original_Teacher As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
             If (Original_Petsa Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -6953,19 +7015,19 @@ Namespace AMSDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Petsa,String)
             End If
-            If (Original_Attendance Is Nothing) Then
+            If (Original_Student_ID Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Attendance,String)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Student_ID,String)
             End If
-            If (Original_Student_ID Is Nothing) Then
+            If (Original_Student_Name Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Student_ID,String)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Student_Name,String)
             End If
             If (Original_Section Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
@@ -6974,12 +7036,12 @@ Namespace AMSDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Section,String)
             End If
-            If (Original_Student_Name Is Nothing) Then
+            If (Original_Attendance Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Student_Name,String)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Attendance,String)
             End If
             If (Original_Teacher Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
@@ -7007,31 +7069,31 @@ Namespace AMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Petsa As String, ByVal Attendance As String, ByVal Student_ID As String, ByVal Section As String, ByVal Student_Name As String, ByVal Teacher As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Petsa As String, ByVal Student_ID As String, ByVal Student_Name As String, ByVal Section As String, ByVal Attendance As String, ByVal Teacher As String) As Integer
             If (Petsa Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Petsa,String)
             End If
-            If (Attendance Is Nothing) Then
+            If (Student_ID Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Attendance,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Student_ID,String)
             End If
-            If (Student_ID Is Nothing) Then
+            If (Student_Name Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Student_ID,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Student_Name,String)
             End If
             If (Section Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(Section,String)
             End If
-            If (Student_Name Is Nothing) Then
+            If (Attendance Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Student_Name,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Attendance,String)
             End If
             If (Teacher Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
@@ -7057,31 +7119,31 @@ Namespace AMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Petsa As String, ByVal Attendance As String, ByVal Student_ID As String, ByVal Section As String, ByVal Student_Name As String, ByVal Teacher As String, ByVal Original_ID As Integer, ByVal Original_Petsa As String, ByVal Original_Attendance As String, ByVal Original_Student_ID As String, ByVal Original_Section As String, ByVal Original_Student_Name As String, ByVal Original_Teacher As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Petsa As String, ByVal Student_ID As String, ByVal Student_Name As String, ByVal Section As String, ByVal Attendance As String, ByVal Teacher As String, ByVal Original_ID As Integer, ByVal Original_Petsa As String, ByVal Original_Student_ID As String, ByVal Original_Student_Name As String, ByVal Original_Section As String, ByVal Original_Attendance As String, ByVal Original_Teacher As String) As Integer
             If (Petsa Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Petsa,String)
             End If
-            If (Attendance Is Nothing) Then
+            If (Student_ID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Attendance,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Student_ID,String)
             End If
-            If (Student_ID Is Nothing) Then
+            If (Student_Name Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Student_ID,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Student_Name,String)
             End If
             If (Section Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Section,String)
             End If
-            If (Student_Name Is Nothing) Then
+            If (Attendance Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Student_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Attendance,String)
             End If
             If (Teacher Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
@@ -7096,19 +7158,19 @@ Namespace AMSDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Petsa,String)
             End If
-            If (Original_Attendance Is Nothing) Then
+            If (Original_Student_ID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Attendance,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Student_ID,String)
             End If
-            If (Original_Student_ID Is Nothing) Then
+            If (Original_Student_Name Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Student_ID,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Student_Name,String)
             End If
             If (Original_Section Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
@@ -7117,12 +7179,12 @@ Namespace AMSDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Section,String)
             End If
-            If (Original_Student_Name Is Nothing) Then
+            If (Original_Attendance Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Student_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Attendance,String)
             End If
             If (Original_Teacher Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
@@ -10368,6 +10430,7 @@ Namespace AMSDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Email", "Email")
             tableMapping.ColumnMappings.Add("Department", "Department")
             tableMapping.ColumnMappings.Add("Subject Name", "Subject Name")
+            tableMapping.ColumnMappings.Add("Image", "Image")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -10377,7 +10440,7 @@ Namespace AMSDataSetTableAdapters
                 ") OR (`First Name` = ?)) AND ((? = 1 AND `Middle Name` IS NULL) OR (`Middle Name"& _ 
                 "` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (`Email` = ?)) AND ((? = 1 AND `Depa"& _ 
                 "rtment` IS NULL) OR (`Department` = ?)) AND ((? = 1 AND `Subject Name` IS NULL) "& _ 
-                "OR (`Subject Name` = ?)))"
+                "OR (`Subject Name` = ?)) AND ((? = 1 AND `Image` IS NULL) OR (`Image` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Teacher_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Teacher ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_user", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -10396,10 +10459,13 @@ Namespace AMSDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Subject_Name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Subject Name", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Subject_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Subject Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Image", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Image", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `Teacher` (`user`, `pass`, `Last Name`, `First Name`, `Middle Name`, "& _ 
-                "`Email`, `Department`, `Subject Name`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+                "`Email`, `Department`, `Subject Name`, `Image`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, "& _ 
+                "?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("user", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("pass", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "pass", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -10409,16 +10475,18 @@ Namespace AMSDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Email", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Email", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Subject_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Subject Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Image", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `Teacher` SET `user` = ?, `pass` = ?, `Last Name` = ?, `First Name` = ?, `"& _ 
-                "Middle Name` = ?, `Email` = ?, `Department` = ?, `Subject Name` = ? WHERE ((`Tea"& _ 
-                "cher ID` = ?) AND ((? = 1 AND `user` IS NULL) OR (`user` = ?)) AND ((? = 1 AND `"& _ 
-                "pass` IS NULL) OR (`pass` = ?)) AND ((? = 1 AND `Last Name` IS NULL) OR (`Last N"& _ 
-                "ame` = ?)) AND ((? = 1 AND `First Name` IS NULL) OR (`First Name` = ?)) AND ((? "& _ 
-                "= 1 AND `Middle Name` IS NULL) OR (`Middle Name` = ?)) AND ((? = 1 AND `Email` I"& _ 
-                "S NULL) OR (`Email` = ?)) AND ((? = 1 AND `Department` IS NULL) OR (`Department`"& _ 
-                " = ?)) AND ((? = 1 AND `Subject Name` IS NULL) OR (`Subject Name` = ?)))"
+                "Middle Name` = ?, `Email` = ?, `Department` = ?, `Subject Name` = ?, `Image` = ?"& _ 
+                " WHERE ((`Teacher ID` = ?) AND ((? = 1 AND `user` IS NULL) OR (`user` = ?)) AND "& _ 
+                "((? = 1 AND `pass` IS NULL) OR (`pass` = ?)) AND ((? = 1 AND `Last Name` IS NULL"& _ 
+                ") OR (`Last Name` = ?)) AND ((? = 1 AND `First Name` IS NULL) OR (`First Name` ="& _ 
+                " ?)) AND ((? = 1 AND `Middle Name` IS NULL) OR (`Middle Name` = ?)) AND ((? = 1 "& _ 
+                "AND `Email` IS NULL) OR (`Email` = ?)) AND ((? = 1 AND `Department` IS NULL) OR "& _ 
+                "(`Department` = ?)) AND ((? = 1 AND `Subject Name` IS NULL) OR (`Subject Name` ="& _ 
+                " ?)) AND ((? = 1 AND `Image` IS NULL) OR (`Image` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("user", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("pass", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "pass", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -10428,6 +10496,7 @@ Namespace AMSDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Email", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Email", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Subject_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Subject Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Image", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Teacher_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Teacher ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_user", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_user", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "user", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -10445,6 +10514,8 @@ Namespace AMSDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Department", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Department", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Subject_Name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Subject Name", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Subject_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Subject Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Image", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Image", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Image", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10461,7 +10532,7 @@ Namespace AMSDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT [Teacher ID], [user], pass, [Last Name], [First Name], [Middle Name], Emai"& _ 
-                "l, Department, [Subject Name] FROM Teacher"
+                "l, Department, [Subject Name], [Image] FROM Teacher"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -10521,7 +10592,7 @@ Namespace AMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Teacher_ID As Integer, ByVal Original_user As String, ByVal Original_pass As String, ByVal Original_Last_Name As String, ByVal Original_First_Name As String, ByVal Original_Middle_Name As String, ByVal Original_Email As String, ByVal Original_Department As String, ByVal Original_Subject_Name As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Teacher_ID As Integer, ByVal Original_user As String, ByVal Original_pass As String, ByVal Original_Last_Name As String, ByVal Original_First_Name As String, ByVal Original_Middle_Name As String, ByVal Original_Email As String, ByVal Original_Department As String, ByVal Original_Subject_Name As String, ByVal Original_Image As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Teacher_ID,Integer)
             If (Original_user Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -10579,6 +10650,13 @@ Namespace AMSDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_Subject_Name,String)
             End If
+            If (Original_Image Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_Image,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -10598,7 +10676,7 @@ Namespace AMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal user As String, ByVal pass As String, ByVal Last_Name As String, ByVal First_Name As String, ByVal Middle_Name As String, ByVal Email As String, ByVal Department As String, ByVal Subject_Name As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal user As String, ByVal pass As String, ByVal Last_Name As String, ByVal First_Name As String, ByVal Middle_Name As String, ByVal Email As String, ByVal Department As String, ByVal Subject_Name As String, ByVal Image As String) As Integer
             If (user Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -10639,6 +10717,11 @@ Namespace AMSDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(7).Value = CType(Subject_Name,String)
             End If
+            If (Image Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(Image,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -10667,6 +10750,7 @@ Namespace AMSDataSetTableAdapters
                     ByVal Email As String,  _
                     ByVal Department As String,  _
                     ByVal Subject_Name As String,  _
+                    ByVal Image As String,  _
                     ByVal Original_Teacher_ID As Integer,  _
                     ByVal Original_user As String,  _
                     ByVal Original_pass As String,  _
@@ -10675,7 +10759,8 @@ Namespace AMSDataSetTableAdapters
                     ByVal Original_Middle_Name As String,  _
                     ByVal Original_Email As String,  _
                     ByVal Original_Department As String,  _
-                    ByVal Original_Subject_Name As String) As Integer
+                    ByVal Original_Subject_Name As String,  _
+                    ByVal Original_Image As String) As Integer
             If (user Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -10716,62 +10801,74 @@ Namespace AMSDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Subject_Name,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Teacher_ID,Integer)
-            If (Original_user Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            If (Image Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_user,String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Image,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Teacher_ID,Integer)
+            If (Original_user Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_user,String)
             End If
             If (Original_pass Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_pass,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_pass,String)
             End If
             If (Original_Last_Name Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Last_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Last_Name,String)
             End If
             If (Original_First_Name Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_First_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_First_Name,String)
             End If
             If (Original_Middle_Name Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_Middle_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Middle_Name,String)
             End If
             If (Original_Email Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Email,String)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Email,String)
             End If
             If (Original_Department Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Department,String)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_Department,String)
             End If
             If (Original_Subject_Name Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_Subject_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Subject_Name,String)
+            End If
+            If (Original_Image Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_Image,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _

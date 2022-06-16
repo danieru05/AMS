@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Overview
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,18 +20,18 @@ Partial Class Overview
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Overview))
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Full_Name = New System.Windows.Forms.Label()
         Me.Welcome = New System.Windows.Forms.Label()
-        Me.Illustrator1 = New System.Windows.Forms.Panel()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Full_Name
@@ -41,7 +41,7 @@ Partial Class Overview
         Me.Full_Name.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Full_Name.Font = New System.Drawing.Font("Crique Grotesk Medium", 45.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Full_Name.ForeColor = System.Drawing.Color.DimGray
-        Me.Full_Name.Location = New System.Drawing.Point(12, 51)
+        Me.Full_Name.Location = New System.Drawing.Point(12, 53)
         Me.Full_Name.Name = "Full_Name"
         Me.Full_Name.Size = New System.Drawing.Size(314, 69)
         Me.Full_Name.TabIndex = 3
@@ -52,68 +52,80 @@ Partial Class Overview
         Me.Welcome.AutoSize = True
         Me.Welcome.Font = New System.Drawing.Font("Berlin Sans FB Demi", 24.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Welcome.ForeColor = System.Drawing.Color.DimGray
-        Me.Welcome.Location = New System.Drawing.Point(12, 9)
+        Me.Welcome.Location = New System.Drawing.Point(17, 15)
         Me.Welcome.Name = "Welcome"
         Me.Welcome.Size = New System.Drawing.Size(161, 38)
         Me.Welcome.TabIndex = 4
         Me.Welcome.Text = "Welcome,"
         '
-        'Illustrator1
-        '
-        Me.Illustrator1.BackgroundImage = CType(resources.GetObject("Illustrator1.BackgroundImage"), System.Drawing.Image)
-        Me.Illustrator1.Location = New System.Drawing.Point(53, 404)
-        Me.Illustrator1.Name = "Illustrator1"
-        Me.Illustrator1.Size = New System.Drawing.Size(537, 331)
-        Me.Illustrator1.TabIndex = 5
-        '
         'Chart1
         '
         ChartArea1.Name = "ChartArea1"
         Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend1.IsTextAutoFit = False
         Legend1.Name = "Legend1"
         Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(53, 164)
+        Me.Chart1.Location = New System.Drawing.Point(24, 184)
         Me.Chart1.Name = "Chart1"
+        Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
         Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series1.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
+        Series1.Name = "Present"
         Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(776, 198)
+        Me.Chart1.Size = New System.Drawing.Size(845, 393)
         Me.Chart1.TabIndex = 6
-        Me.Chart1.Text = "Chart1"
+        Me.Chart1.Text = "AttendanceStudent"
         '
-        'TextBox1
+        'DateTimePicker1
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(639, 557)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(144, 116)
-        Me.TextBox1.TabIndex = 7
+        Me.DateTimePicker1.CalendarForeColor = System.Drawing.Color.DimGray
+        Me.DateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.DimGray
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(544, 148)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(325, 29)
+        Me.DateTimePicker1.TabIndex = 7
+        Me.DateTimePicker1.Value = New Date(2022, 6, 17, 0, 0, 0, 0)
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.Full_Name)
+        Me.Panel1.Controls.Add(Me.Welcome)
+        Me.Panel1.Location = New System.Drawing.Point(-3, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(897, 142)
+        Me.Panel1.TabIndex = 8
         '
         'Overview
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(880, 645)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(895, 601)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Chart1)
-        Me.Controls.Add(Me.Illustrator1)
-        Me.Controls.Add(Me.Welcome)
-        Me.Controls.Add(Me.Full_Name)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.Name = "Overview"
         Me.Text = "Overview"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Full_Name As Label
     Friend WithEvents Welcome As Label
-    Friend WithEvents Illustrator1 As Panel
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents AMSDataSet As AMSDataSet
+    Friend WithEvents AMSBindingSource As BindingSource
+    Friend WithEvents AMSTableAdapter As AMSDataSetTableAdapters.AMSTableAdapter
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Panel1 As Panel
 End Class

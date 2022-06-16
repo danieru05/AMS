@@ -59,9 +59,20 @@ Public Class Edit_Teacher
         End If
     End Sub
 
+    Private Sub Delete_Button_Click(sender As Object, e As EventArgs) Handles Delete_Button.Click
+        If MsgBox("Do you want to delete this?", vbQuestion + vbYesNo) = vbYes Then
+            Dim cmd As New OleDbCommand("Delete from Teacher where [last Name] ='" & Teachers.TheName & "'or [Last Name] ='" & Department___Teachers.TheName & "'", conn)
+            cmd.ExecuteNonQuery()
+            MsgBox("Deleted Successfully")
+            Teachers.LoadTeacher()
+            Department___Teachers.LoadTeacher()
+            Me.Close()
+        End If
+    End Sub
+
     Private Sub Edit_Teacher_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Department___Teachers.Teachers_DataGrid.Rows.Clear()
-        Dim cmd As New OleDbCommand("select * from Teacher where [Last Name] = '" & Teachers.TheName & "'", conn)
+        'Department___Teachers.Teachers_DataGrid.Rows.Clear()
+        Dim cmd As New OleDbCommand("select * from Teacher where [Last Name] = '" & Teachers.TheName & "' or [Last Name] ='" & Department___Teachers.TheName & "'", conn)
         Dim dr As OleDbDataReader
         dr = cmd.ExecuteReader
         dr.Read()

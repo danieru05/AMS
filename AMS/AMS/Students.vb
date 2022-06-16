@@ -33,19 +33,14 @@ Public Class Students
         Student_Add.Show()
     End Sub
 
-    Private Sub Delete_Button_Click(sender As Object, e As EventArgs) Handles Delete_Button.Click
-        If MsgBox("Do you want to delete this?", vbQuestion + vbYesNo) = vbYes Then
-            Dim cmd As New OleDbCommand("Delete from Student where [Last Name] ='" & TheName & "'", conn)
-            cmd.ExecuteNonQuery()
-            MsgBox("Deleted Successfully")
-            LoadStudent()
-        End If
+    Private Sub Delete_Button_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub Students_DataGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Students_DataGrid.CellClick
-        Dim row As DataGridViewRow = Students_DataGrid.Rows(e.RowIndex)
-        TheName = row.Cells(1).Value.ToString()
-    End Sub
+    'Private Sub Students_DataGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Students_DataGrid.CellClick
+    '    Dim row As DataGridViewRow = Students_DataGrid.Rows(e.RowIndex)
+    '    TheName = row.Cells(1).Value.ToString()
+    'End Sub
 
     Private Sub Students_DataGrid_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Students_DataGrid.CellDoubleClick
         Dim row As DataGridViewRow = Students_DataGrid.Rows(e.RowIndex)

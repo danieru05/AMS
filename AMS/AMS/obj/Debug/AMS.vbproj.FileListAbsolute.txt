@@ -141,3 +141,4 @@ D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Section_Teacher.resources
 D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Student_Teacher.resources
 D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Section_Attendance.resources
 D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Attendance_Section.resources
+D:\johnel\Programs\AMS\AMS\AMS\obj\Debug\AMS.Edit_Attendance.resources

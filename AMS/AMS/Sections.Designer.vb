@@ -24,16 +24,18 @@ Partial Class Sections
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Sections))
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Search = New System.Windows.Forms.TextBox()
         Me.Section_DataGrid = New System.Windows.Forms.DataGridView()
-        Me.Section = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Display_Panel = New System.Windows.Forms.Panel()
         Me.Delete_Button = New System.Windows.Forms.Button()
         Me.Add_Button = New System.Windows.Forms.Button()
         Me.Back_Button = New System.Windows.Forms.Button()
+        Me.Section = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Number = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.Section_DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Display_Panel.SuspendLayout()
         Me.SuspendLayout()
@@ -68,41 +70,35 @@ Partial Class Sections
         Me.Section_DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.Section_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Section_DataGrid.ColumnHeadersVisible = False
-        Me.Section_DataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Section})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Berlin Sans FB", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Section_DataGrid.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Section_DataGrid.Location = New System.Drawing.Point(0, 75)
+        Me.Section_DataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Section, Me.Number})
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Berlin Sans FB", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Section_DataGrid.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Section_DataGrid.Location = New System.Drawing.Point(0, 78)
         Me.Section_DataGrid.Name = "Section_DataGrid"
         Me.Section_DataGrid.ReadOnly = True
         Me.Section_DataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Typo Formal Demo", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumTurquoise
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Section_DataGrid.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Typo Formal Demo", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumTurquoise
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Section_DataGrid.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.Section_DataGrid.RowHeadersVisible = False
         Me.Section_DataGrid.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Berlin Sans FB", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Section_DataGrid.RowTemplate.DividerHeight = 1
         Me.Section_DataGrid.RowTemplate.Height = 100
         Me.Section_DataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Section_DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.Section_DataGrid.Size = New System.Drawing.Size(871, 499)
         Me.Section_DataGrid.TabIndex = 2
-        '
-        'Section
-        '
-        Me.Section.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Section.HeaderText = "Section"
-        Me.Section.Name = "Section"
-        Me.Section.ReadOnly = True
         '
         'Display_Panel
         '
@@ -161,6 +157,21 @@ Partial Class Sections
         Me.Back_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Back_Button.UseVisualStyleBackColor = True
         '
+        'Section
+        '
+        Me.Section.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Section.HeaderText = "Section"
+        Me.Section.Name = "Section"
+        Me.Section.ReadOnly = True
+        '
+        'Number
+        '
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.Number.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Number.HeaderText = "N"
+        Me.Number.Name = "Number"
+        Me.Number.ReadOnly = True
+        '
         'Sections
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -179,10 +190,11 @@ Partial Class Sections
 
     Friend WithEvents Search As TextBox
     Friend WithEvents Section_DataGrid As DataGridView
-    Friend WithEvents Section As DataGridViewTextBoxColumn
     Friend WithEvents Display_Panel As Panel
     Friend WithEvents Back_Button As Button
     Friend WithEvents Cancel_Button As Button
     Friend WithEvents Add_Button As Button
     Friend WithEvents Delete_Button As Button
+    Friend WithEvents Section As DataGridViewTextBoxColumn
+    Friend WithEvents Number As DataGridViewTextBoxColumn
 End Class

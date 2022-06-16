@@ -35,6 +35,7 @@ Partial Class Profile
         Me.Email = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Teacher_Panel = New System.Windows.Forms.Panel()
+        Me.Sec = New System.Windows.Forms.ListBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Subj = New System.Windows.Forms.Label()
@@ -42,7 +43,8 @@ Partial Class Profile
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Edit = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Sec = New System.Windows.Forms.ListBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Teacher_Panel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,6 +184,16 @@ Partial Class Profile
         Me.Teacher_Panel.TabIndex = 10
         Me.Teacher_Panel.Visible = False
         '
+        'Sec
+        '
+        Me.Sec.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Sec.FormattingEnabled = True
+        Me.Sec.ItemHeight = 23
+        Me.Sec.Location = New System.Drawing.Point(172, 126)
+        Me.Sec.Name = "Sec"
+        Me.Sec.Size = New System.Drawing.Size(276, 119)
+        Me.Sec.TabIndex = 35
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -257,21 +269,39 @@ Partial Class Profile
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
         '
-        'Sec
+        'Button1
         '
-        Me.Sec.Font = New System.Drawing.Font("Berlin Sans FB", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Sec.FormattingEnabled = True
-        Me.Sec.ItemHeight = 23
-        Me.Sec.Location = New System.Drawing.Point(172, 126)
-        Me.Sec.Name = "Sec"
-        Me.Sec.Size = New System.Drawing.Size(276, 119)
-        Me.Sec.TabIndex = 35
+        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(519, 155)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(55, 46)
+        Me.Button1.TabIndex = 13
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(519, 155)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(55, 46)
+        Me.Button2.TabIndex = 14
+        Me.Button2.UseVisualStyleBackColor = False
+        Me.Button2.Visible = False
         '
         'Profile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(879, 562)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Edit)
         Me.Controls.Add(Me.Panel1)
@@ -307,4 +337,6 @@ Partial Class Profile
     Friend WithEvents Dept As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Sec As ListBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Students
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Students
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -35,7 +35,6 @@ Partial Class Students
         Me.Section = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Add_Button = New System.Windows.Forms.Button()
-        Me.Delete_Button = New System.Windows.Forms.Button()
         CType(Me.Students_DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -146,7 +145,7 @@ Partial Class Students
         Me.Add_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Add_Button.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Add_Button.ForeColor = System.Drawing.Color.White
-        Me.Add_Button.Location = New System.Drawing.Point(685, 55)
+        Me.Add_Button.Location = New System.Drawing.Point(787, 55)
         Me.Add_Button.Name = "Add_Button"
         Me.Add_Button.Size = New System.Drawing.Size(96, 28)
         Me.Add_Button.TabIndex = 9
@@ -154,28 +153,11 @@ Partial Class Students
         Me.Add_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Add_Button.UseVisualStyleBackColor = False
         '
-        'Delete_Button
-        '
-        Me.Delete_Button.BackColor = System.Drawing.Color.SteelBlue
-        Me.Delete_Button.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Delete_Button.FlatAppearance.BorderSize = 0
-        Me.Delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Delete_Button.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Delete_Button.ForeColor = System.Drawing.Color.White
-        Me.Delete_Button.Location = New System.Drawing.Point(787, 55)
-        Me.Delete_Button.Name = "Delete_Button"
-        Me.Delete_Button.Size = New System.Drawing.Size(96, 28)
-        Me.Delete_Button.TabIndex = 14
-        Me.Delete_Button.Text = "Delete"
-        Me.Delete_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Delete_Button.UseVisualStyleBackColor = False
-        '
         'Students
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(895, 601)
-        Me.Controls.Add(Me.Delete_Button)
         Me.Controls.Add(Me.Add_Button)
         Me.Controls.Add(Me.Students_DataGrid)
         Me.Controls.Add(Me.Search)
@@ -197,5 +179,4 @@ Partial Class Students
     Friend WithEvents Section As DataGridViewTextBoxColumn
     Friend WithEvents Status As DataGridViewTextBoxColumn
     Friend WithEvents Add_Button As Button
-    Friend WithEvents Delete_Button As Button
 End Class

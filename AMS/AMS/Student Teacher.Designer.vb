@@ -27,10 +27,11 @@ Partial Class Student_Teacher
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Search = New System.Windows.Forms.TextBox()
         Me.Students_DataGrid = New System.Windows.Forms.DataGridView()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Student_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FullName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Attendance = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         CType(Me.Students_DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -58,7 +59,7 @@ Partial Class Student_Teacher
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Students_DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.Students_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Students_DataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Student_ID, Me.FullName, Me.Attendance})
+        Me.Students_DataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Student_ID, Me.FullName, Me.Column1, Me.Attendance})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -84,6 +85,15 @@ Partial Class Student_Teacher
         Me.Students_DataGrid.Size = New System.Drawing.Size(871, 476)
         Me.Students_DataGrid.TabIndex = 60
         '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(625, 56)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(258, 25)
+        Me.DateTimePicker1.TabIndex = 61
+        Me.DateTimePicker1.Value = New Date(2022, 6, 17, 0, 0, 0, 0)
+        '
         'Student_ID
         '
         Me.Student_ID.HeaderText = "Student ID"
@@ -95,20 +105,17 @@ Partial Class Student_Teacher
         Me.FullName.HeaderText = "Full Name"
         Me.FullName.Name = "FullName"
         '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.HeaderText = "Section"
+        Me.Column1.Name = "Column1"
+        '
         'Attendance
         '
         Me.Attendance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Attendance.HeaderText = "Attendance"
         Me.Attendance.Name = "Attendance"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(625, 56)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(258, 25)
-        Me.DateTimePicker1.TabIndex = 61
-        Me.DateTimePicker1.Value = New Date(2022, 6, 17, 0, 0, 0, 0)
         '
         'Student_Teacher
         '
@@ -131,5 +138,6 @@ Partial Class Student_Teacher
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Student_ID As DataGridViewTextBoxColumn
     Friend WithEvents FullName As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Attendance As DataGridViewTextBoxColumn
 End Class

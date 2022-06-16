@@ -399,4 +399,34 @@
         UL9378fYTE9I2NOr1/8HuD5r8ddaMhYAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gYQFR8FdE1rigAAAeNJREFU
+        WEfFl01SAjEQhWHlkgN4ARZWacE19AqugUvogr1rdSFeQS+j5Q6qPINW+fe+2D3GIQPzEzRVX03o7uS9
+        ScIw9OI2nU5HYiFW4l18ZoK5mPNWjEzupynYF3ORU7QKNOaTyaRv8sEA4qniLizFnUG/nJ+7OMue885Z
+        6mNR3KH6QIyc16E5IsG+xBN0AYF9011r5KzG6xcE40BXjk2Lecfi0hhb2FfC61cEci3/UgfLRRB/iXKv
+        xMjNZjMOvN/0O8Ve1JW7oK6mPnddzl9amjwHM8T/y8C9x3Ma2LQF9MMW6BpvQVYDUOcQnohiTG4DTb+G
+        jQx8iGeDfqoGEOAu4wcRy15+EAXqGHgUp2Jg8zFmYLEHkRoDiHHaOXBrws42Azwl90x3rZGzmtTYWmwy
+        cC3iZRwKb0MLE2d5qU3NsZUqA4U4P5vqX4h43+kTCzVcRSsTKQNl8U0TF7Vc7XOqrpKygSbiTicTsYE2
+        4k5rE26gi7jTygTFrQZW0HiuUJhJ3Glkgrqc4k5tE7sQd2qZIJl6ecjFNhPhleypFMzNJhNLgldRYFdU
+        mbghcCDeLLBLyibY+iM+EzgTqUG5KUz8anr6YeJc/MWf0+LteK0peShuBH8mc5phLuZk7u9lD63X+wJp
+        lKILGBS4eAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="Button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gYQFR8cECbDSgAAAf9JREFU
+        WEe9l7FOAkEQhiGSUNCKFvIS8gg0UhM1NPZAYeAReBVLY2J8CSssjJ08hcZEGoP/f87p7szechvv+JPP
+        3M38uzOYu73dRq7pdNoGC7ACG7D9J5yDc81BW8qEBUMPvIDQRFXwDE6knC8k+MvrLJ6zBrYJBPlvDw2o
+        A9sEAk+OgdyDI0kz/+nkUngAnEvH/SZwox+43+IU7h9VvizXoAXunFjOXxMqsc2CjhC70p4SvIFDGV/U
+        BB/MdpkGmuDW9ezgC1zK8Ey4L2pivrMBCvEDsAQfua+AV3Amwzwhzib0M7Eq1UAu5DtgAM7BhcMInE4m
+        k6ZYg4LnGLj1NkkNVCFTzwRqlqlnAjXL1DOBEoKvC7iC3gi87ko6Kvj8eiawQ/CMwbs7RmBsLLZCqTFp
+        DSA/BHzPvTEOzA3FHpTyl28AOS5IXEI9f4B17HXU/pQG+toboS/DjLQ3pQEuNp43wkiGGWlvSgNcAT1v
+        hIEMM9LelAa4DO/6FhB6OjLMSHnLN0Ahzw+S5w+wFHtQ2p/aAL9osU8zcy2xB6X8aQ1Qs9mMryM3Kdwp
+        cbtGeM1Y9GtIwePXM4GaZeqZQM0y9fAnuimtUpxb1co2JNFteVXinDK3Wyvbku3zYKJZsIF9Hc00rPlz
+        aMVF3YdTDWv1suK5EKj6eK7Jj+usIcf1RuMbtUdGq7dLecEAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

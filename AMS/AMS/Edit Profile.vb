@@ -38,7 +38,4 @@ Public Class Edit_Profile
         Me.Close()
     End Sub
 
-    Private Sub pass_TextBox_TextChanged(sender As Object, e As EventArgs) Handles pass_TextBox.TextChanged
-
-    End Sub
 End Class

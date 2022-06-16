@@ -37,8 +37,6 @@ Partial Class Department___Teachers
         Me.Title = New System.Windows.Forms.TextBox()
         Me.Display_Panel = New System.Windows.Forms.Panel()
         Me.Add_Button = New System.Windows.Forms.Button()
-        Me.Cancel_Button = New System.Windows.Forms.Button()
-        Me.Delete_Button = New System.Windows.Forms.Button()
         CType(Me.Teachers_DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Display_Panel.SuspendLayout()
         Me.SuspendLayout()
@@ -157,8 +155,6 @@ Partial Class Department___Teachers
         '
         'Display_Panel
         '
-        Me.Display_Panel.Controls.Add(Me.Cancel_Button)
-        Me.Display_Panel.Controls.Add(Me.Delete_Button)
         Me.Display_Panel.Controls.Add(Me.Add_Button)
         Me.Display_Panel.Controls.Add(Me.Title)
         Me.Display_Panel.Controls.Add(Me.Teachers_DataGrid)
@@ -175,46 +171,13 @@ Partial Class Department___Teachers
         Me.Add_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Add_Button.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Add_Button.ForeColor = System.Drawing.Color.White
-        Me.Add_Button.Location = New System.Drawing.Point(744, 53)
+        Me.Add_Button.Location = New System.Drawing.Point(846, 53)
         Me.Add_Button.Name = "Add_Button"
         Me.Add_Button.Size = New System.Drawing.Size(96, 28)
         Me.Add_Button.TabIndex = 10
         Me.Add_Button.Text = "Add"
         Me.Add_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Add_Button.UseVisualStyleBackColor = False
-        '
-        'Cancel_Button
-        '
-        Me.Cancel_Button.BackColor = System.Drawing.Color.Crimson
-        Me.Cancel_Button.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Cancel_Button.FlatAppearance.BorderSize = 0
-        Me.Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Cancel_Button.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cancel_Button.ForeColor = System.Drawing.Color.White
-        Me.Cancel_Button.Location = New System.Drawing.Point(642, 53)
-        Me.Cancel_Button.Name = "Cancel_Button"
-        Me.Cancel_Button.Size = New System.Drawing.Size(96, 28)
-        Me.Cancel_Button.TabIndex = 9
-        Me.Cancel_Button.Text = "Cancel"
-        Me.Cancel_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Cancel_Button.UseVisualStyleBackColor = False
-        Me.Cancel_Button.Visible = False
-        '
-        'Delete_Button
-        '
-        Me.Delete_Button.BackColor = System.Drawing.Color.SteelBlue
-        Me.Delete_Button.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Delete_Button.FlatAppearance.BorderSize = 0
-        Me.Delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Delete_Button.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Delete_Button.ForeColor = System.Drawing.Color.White
-        Me.Delete_Button.Location = New System.Drawing.Point(846, 53)
-        Me.Delete_Button.Name = "Delete_Button"
-        Me.Delete_Button.Size = New System.Drawing.Size(96, 28)
-        Me.Delete_Button.TabIndex = 10
-        Me.Delete_Button.Text = "Delete"
-        Me.Delete_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Delete_Button.UseVisualStyleBackColor = False
         '
         'Department___Teachers
         '
@@ -244,6 +207,4 @@ Partial Class Department___Teachers
     Friend WithEvents Middle_Name As DataGridViewTextBoxColumn
     Friend WithEvents Department As DataGridViewTextBoxColumn
     Friend WithEvents Subject As DataGridViewTextBoxColumn
-    Friend WithEvents Cancel_Button As Button
-    Friend WithEvents Delete_Button As Button
 End Class

@@ -8,8 +8,12 @@ Public Class Sections
         Dim cmd As New OleDbCommand("Select [Course Name] from Course", conn)
         Dim dr As OleDbDataReader
         dr = cmd.ExecuteReader
-        While dr.Read
-            Section_DataGrid.Rows.Add(dr.Item("Course Name"))
+        While dr.Read()
+            Dim cmd1 As New OleDbCommand("Select count([Section]) as total from [Section] where [Course] ='" & dr("Course Name") & "'", conn)
+            Dim dr1 As OleDbDataReader = cmd1.ExecuteReader
+            While dr1.Read()
+                Section_DataGrid.Rows.Add(dr.Item("Course Name"), dr1("total"))
+            End While
         End While
         Section_DataGrid.Sort(Section_DataGrid.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
     End Sub
@@ -20,7 +24,11 @@ Public Class Sections
         Dim dr As OleDbDataReader
         dr = cmd.ExecuteReader
         While dr.Read
-            Section_DataGrid.Rows.Add(dr.Item("Section"))
+            Dim cmd1 As New OleDbCommand("Select count([Section]) as total from [Student] where [Section] ='" & dr("Section") & "'", conn)
+            Dim dr1 As OleDbDataReader = cmd1.ExecuteReader
+            While dr1.Read()
+                Section_DataGrid.Rows.Add(dr.Item("Section"), dr1("total"))
+            End While
             counter += 1
         End While
     End Sub
@@ -93,18 +101,32 @@ Public Class Sections
 
     Private Sub Delete_Button_Click(sender As Object, e As EventArgs) Handles Delete_Button.Click
         If Search.Enabled = True Then
-            If MsgBox("Do you want to delete this?", vbQuestion + vbYesNo) = vbYes Then
-                Dim cmd As New OleDbCommand("Delete from Course where [Course Name] ='" & TheName & "'", conn)
-                cmd.ExecuteNonQuery()
-                MsgBox("Deleted Successfully")
-                LoadSection()
+            Dim cmd1 As New OleDbCommand("Select count([Section]) as total from [Section] where [Course] ='" & TheName & "'", conn)
+            Dim dr1 As OleDbDataReader = cmd1.ExecuteReader
+            dr1.Read()
+            If dr1("total") = 0 Then
+                If MsgBox("Do you want to delete this?", vbQuestion + vbYesNo) = vbYes Then
+                    Dim cmd As New OleDbCommand("Delete from Course where [Course Name] ='" & TheName & "'", conn)
+                    cmd.ExecuteNonQuery()
+                    MsgBox("Deleted Successfully")
+                    LoadSection()
+                End If
+            Else
+                MsgBox("Can't Delete! Course has Sections")
             End If
         Else
-            If MsgBox("Do you want to delete this?", vbQuestion + vbYesNo) = vbYes Then
-                Dim cmd As New OleDbCommand("Delete from [Section] where [Section] ='" & TheName & "'", conn)
-                cmd.ExecuteNonQuery()
-                MsgBox("Deleted Successfully")
-                LoadAllSection()
+            Dim cmd1 As New OleDbCommand("Select count([Section]) as total from [Student] where [Section] ='" & TheName & "'", conn)
+            Dim dr1 As OleDbDataReader = cmd1.ExecuteReader
+            dr1.Read()
+            If dr1("total") = 0 Then
+                If MsgBox("Do you want to delete this?", vbQuestion + vbYesNo) = vbYes Then
+                    Dim cmd As New OleDbCommand("Delete from [Section] where [Section] ='" & TheName & "'", conn)
+                    cmd.ExecuteNonQuery()
+                    MsgBox("Deleted Successfully")
+                    LoadAllSection()
+                End If
+            Else
+                MsgBox("Can't Delete! Section has Students")
             End If
         End If
     End Sub
@@ -113,5 +135,4 @@ Public Class Sections
         Dim row As DataGridViewRow = Section_DataGrid.Rows(e.RowIndex)
         TheName = row.Cells(0).Value.ToString()
     End Sub
-
 End Class

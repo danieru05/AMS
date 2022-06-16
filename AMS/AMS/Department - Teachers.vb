@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OleDb
 Public Class Department___Teachers
-    Dim TheName As String
+    Public TheName As String
     Sub LoadTeacher()
         Teachers_DataGrid.Rows.Clear()
         Dim cmd As New OleDbCommand("select * from Teacher where Department = '" & Title.Text & "'", conn)
@@ -17,20 +17,11 @@ Public Class Department___Teachers
         Teacher_ADD.Show()
     End Sub
     Private Sub Department___Teachers_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        Teacher_ADD.Hide()
+        Teacher_ADD.Close()
     End Sub
-
-    Private Sub Delete_Button_Click(sender As Object, e As EventArgs) Handles Delete_Button.Click
-        If MsgBox("Do you want to delete this?", vbQuestion + vbYesNo) = vbYes Then
-            Dim cmd As New OleDbCommand("Delete from Teacher where [last Name] ='" & TheName & "'", conn)
-            cmd.ExecuteNonQuery()
-            MsgBox("Deleted Successfully")
-            LoadTeacher()
-        End If
-    End Sub
-
-    Private Sub Teachers_DataGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Teachers_DataGrid.CellClick
+    Private Sub Teachers_DataGrid_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Teachers_DataGrid.CellDoubleClick
         Dim row As DataGridViewRow = Teachers_DataGrid.Rows(e.RowIndex)
         TheName = row.Cells(1).Value.ToString()
+        Edit_Teacher.Show()
     End Sub
 End Class

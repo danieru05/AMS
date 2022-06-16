@@ -61,7 +61,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim cmd As New OleDbCommand("select * from Student where [Last Name] = '" & Students.TheName & "'", conn)
+        Dim cmd As New OleDbCommand("select * from Student where [Last Name] = '" & Students.TheName & "' or 
+        [Last Name]='" & Section___Students.TheName & "'", conn)
         Dim dr As OleDbDataReader
         dr = cmd.ExecuteReader
         dr.Read()
@@ -81,5 +82,16 @@ Public Class Form1
         While dr.Read()
             Sec_ComboBox.Items.Add(dr.Item("Section"))
         End While
+    End Sub
+
+    Private Sub Delete_Button_Click(sender As Object, e As EventArgs) Handles Delete_Button.Click
+        If MsgBox("Do you want to delete this?", vbQuestion + vbYesNo) = vbYes Then
+            Dim cmd As New OleDbCommand("Delete from Student where [Last Name] ='" & Students.TheName & "' or [Last Name] ='" & Section___Students.TheName & "'", conn)
+            cmd.ExecuteNonQuery()
+            MsgBox("Deleted Successfully")
+            Students.LoadStudent()
+            Section___Students.LoadSection()
+            Me.Close()
+        End If
     End Sub
 End Class

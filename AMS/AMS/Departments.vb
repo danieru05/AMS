@@ -3,11 +3,15 @@ Public Class Departments
     Dim Title As String
     Sub LoadDepartment()
         Department_DataGrid.Rows.Clear()
-        Dim cmd As New OleDbCommand("Select * from Department", conn)
+        Dim cmd As New OleDbCommand("Select [Department] from Department", conn)
         Dim dr As OleDbDataReader
         dr = cmd.ExecuteReader
         While dr.Read()
-            Department_DataGrid.Rows.Add(dr.Item("Department"))
+            Dim cmd1 As New OleDbCommand("Select count(Department) as total from Teacher where [Department] ='" & dr("Department") & "'", conn)
+            Dim dr1 As OleDbDataReader = cmd1.ExecuteReader
+            While dr1.Read()
+                Department_DataGrid.Rows.Add(dr.Item("Department"), dr1("total"))
+            End While
         End While
         Department_DataGrid.Sort(Department_DataGrid.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
     End Sub
@@ -66,10 +70,14 @@ Public Class Departments
             Search.Text = "Type Here to Add Department"
             LoadDepartment()
         Else
-            Dim cmd As New OleDbCommand("Insert into Department(Department) values('" & Search.Text & "')", conn)
-            cmd.ExecuteNonQuery()
-            MsgBox("Added Successfully")
-            LoadNormalDepartment()
+            If Search.Text = "Type Here to Add Department" Or Search.Text = "" Then
+                MsgBox("Please input department name")
+            Else
+                Dim cmd As New OleDbCommand("Insert into Department(Department) values('" & Search.Text & "')", conn)
+                cmd.ExecuteNonQuery()
+                MsgBox("Added Successfully")
+                LoadNormalDepartment()
+            End If
         End If
     End Sub
     Private Sub Delete_Button_Click(sender As Object, e As EventArgs) Handles Delete_Button.Click
@@ -81,11 +89,18 @@ Public Class Departments
             Update_Button.BackColor = Color.Transparent
             Cancel_Button.Visible = True
         Else
-            If MsgBox("Do you want to delete this?", vbQuestion + vbYesNo) = vbYes Then
-                Dim cmd As New OleDbCommand("Delete from Department where [Department] ='" & Title & "'", conn)
-                cmd.ExecuteNonQuery()
-                MsgBox("Deleted Successfully")
-                LoadNormalDepartment()
+            Dim cmd1 As New OleDbCommand("Select count(Department) as total from Teacher where [Department] ='" & Title & "'", conn)
+            Dim dr1 As OleDbDataReader = cmd1.ExecuteReader
+            dr1.Read()
+            If dr1("total") = 0 Then
+                If MsgBox("Do you want to delete this?", vbQuestion + vbYesNo) = vbYes Then
+                    Dim cmd2 As New OleDbCommand("Delete from Department where [Department] ='" & Title & "'", conn)
+                    cmd2.ExecuteNonQuery()
+                    MsgBox("Deleted Successfully")
+                    LoadNormalDepartment()
+                End If
+            Else
+                MsgBox("Can't Delete! Department has Teachers")
             End If
         End If
     End Sub
@@ -104,6 +119,8 @@ Public Class Departments
             If MsgBox("Do you want to update this?", vbQuestion + vbYesNo) = vbYes Then
                 Dim cmd As New OleDbCommand("Update Department set [Department] ='" & Search.Text & "' where [Department] ='" & Title & "'", conn)
                 cmd.ExecuteNonQuery()
+                Dim cmd1 As New OleDbCommand("Update Teacher set [Department] ='" & Search.Text & "' where [Department] ='" & Title & "'", conn)
+                cmd1.ExecuteNonQuery()
                 MsgBox("Updated Successfully")
                 LoadNormalDepartment()
             End If
