@@ -23,14 +23,14 @@ Public Class Student_Add
         End While
         Students.Students_DataGrid.Sort(Students.Students_DataGrid.Columns(0), System.ComponentModel.ListSortDirection.Descending)
     End Sub
-    Sub ComboBoxSection()
-        Dim sec As New OleDbCommand("Select [Section] from [Section] where [Section] ='" & x & "'", conn)
-        Dim dr As OleDbDataReader
-        dr = sec.ExecuteReader
-        While dr.Read()
-            Sec_ComboBox.Items.Add(dr.Item("Section"))
-        End While
-    End Sub
+    'Sub ComboBoxSection()
+    '    Dim sec As New OleDbCommand("Select [Section] from [Section] where [Section] ='" & x & "'", conn)
+    '    Dim dr As OleDbDataReader
+    '    dr = sec.ExecuteReader
+    '    While dr.Read()
+    '        Sec_ComboBox.Items.Add(dr.Item("Section"))
+    '    End While
+    'End Sub
 
     Sub ComboBox()
         Dim course As New OleDbCommand("Select [Course Name] from [Course]", conn)
@@ -61,12 +61,15 @@ Public Class Student_Add
     End Sub
     Private Sub Course_ComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Course_ComboBox.SelectedIndexChanged
         Sec_ComboBox.Items.Clear()
-        Dim sec As New OleDbCommand("Select [Section] from [Section] where [Course] ='" & Course_ComboBox.Text & "'", conn)
-        Dim dr As OleDbDataReader
-        dr = sec.ExecuteReader
-        While dr.Read()
-            Sec_ComboBox.Items.Add(dr.Item("Section"))
-        End While
+        If opt > 0 Then
+            Dim sec As New OleDbCommand("Select [Section] from [Section] where [Course] ='" & Course_ComboBox.Text & "'", conn)
+            Dim dr As OleDbDataReader
+            dr = sec.ExecuteReader
+            While dr.Read()
+                Sec_ComboBox.Items.Add(dr.Item("Section"))
+            End While
+        End If
+
     End Sub
     Private Sub Student_Add_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ComboBox()
@@ -76,17 +79,23 @@ Public Class Student_Add
     End Sub
 
     Private Sub Add_Button_Click(sender As Object, e As EventArgs) Handles Add_Button.Click
-        Dim add As New OleDbCommand("Insert into Student([Last Name], [First Name], [Middle Name], [Section], [Status]) 
-        values('" & LName_TextBox.Text & "','" & FName_TextBox.Text & "','" & MName_TextBox.Text & "','" & Sec_ComboBox.Text & "','" & Stat_ComboBox.Text & "')", conn)
-        add.ExecuteNonQuery()
-        Section()
-        AllStudents()
-        LName_TextBox.Text = ""
-        FName_TextBox.Text = ""
-        MName_TextBox.Text = ""
-        Course_ComboBox.Items.Clear()
-        Sec_ComboBox.Items.Clear()
-        Stat_ComboBox.Items.Clear()
-        ComboBox()
+        If LName_TextBox.Text = "" Or FName_TextBox.Text = "" Or MName_TextBox.Text = "" Or Course_ComboBox.Text = "" Or Sec_ComboBox.Text = "" Or Stat_ComboBox.Text = "" Then
+            MsgBox("Please fill out all!")
+        Else
+            Dim add As New OleDbCommand("Insert into Student([Last Name], [First Name], [Middle Name], [Section], [Status]) 
+            values('" & LName_TextBox.Text & "','" & FName_TextBox.Text & "','" & MName_TextBox.Text & "','" & Sec_ComboBox.Text & "','" & Stat_ComboBox.Text & "')", conn)
+            add.ExecuteNonQuery()
+            Section()
+            AllStudents()
+            Section___Students.LoadSection()
+            Sections.LoadAllSection()
+            LName_TextBox.Text = ""
+            FName_TextBox.Text = ""
+            MName_TextBox.Text = ""
+            Course_ComboBox.Items.Clear()
+            Sec_ComboBox.Items.Clear()
+            Stat_ComboBox.Items.Clear()
+            ComboBox()
+        End If
     End Sub
 End Class

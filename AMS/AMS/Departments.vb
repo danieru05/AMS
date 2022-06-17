@@ -116,13 +116,17 @@ Public Class Departments
             Search.Text = "Type Here to Update Department"
             LoadDepartment()
         Else
-            If MsgBox("Do you want to update this?", vbQuestion + vbYesNo) = vbYes Then
-                Dim cmd As New OleDbCommand("Update Department set [Department] ='" & Search.Text & "' where [Department] ='" & Title & "'", conn)
-                cmd.ExecuteNonQuery()
-                Dim cmd1 As New OleDbCommand("Update Teacher set [Department] ='" & Search.Text & "' where [Department] ='" & Title & "'", conn)
-                cmd1.ExecuteNonQuery()
-                MsgBox("Updated Successfully")
-                LoadNormalDepartment()
+            If Search.Text = "Type Here to Update Department" Or Search.Text = "" Then
+                MsgBox("Please input updates")
+            Else
+                If MsgBox("Do you want to update this?", vbQuestion + vbYesNo) = vbYes Then
+                    Dim cmd As New OleDbCommand("Update Department set [Department] ='" & Search.Text & "' where [Department] ='" & Title & "'", conn)
+                    cmd.ExecuteNonQuery()
+                    Dim cmd1 As New OleDbCommand("Update Teacher set [Department] ='" & Search.Text & "' where [Department] ='" & Title & "'", conn)
+                    cmd1.ExecuteNonQuery()
+                    MsgBox("Updated Successfully")
+                    LoadNormalDepartment()
+                End If
             End If
         End If
     End Sub

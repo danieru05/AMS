@@ -54,25 +54,33 @@ Public Class Form1
                 add.ExecuteNonQuery()
                 MsgBox("Updated Successfully")
                 AllStudents()
+                Section___Students.LoadSection()
                 Me.Close()
             End If
         End If
 
+
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim cmd As New OleDbCommand("select * from Student where [Last Name] = '" & Students.TheName & "' or 
+        Dim cmd As New OleDbCommand("select [Last Name], [First Name], [Middle Name], [Section], [Status] from Student where [Last Name] = '" & Students.TheName & "' or 
         [Last Name]='" & Section___Students.TheName & "'", conn)
-        Dim dr As OleDbDataReader
-        dr = cmd.ExecuteReader
+        Dim dr As OleDbDataReader = cmd.ExecuteReader
         dr.Read()
         LName_TextBox.Text = dr("Last Name")
         FName_TextBox.Text = dr("First Name")
         MName_TextBox.Text = dr("Middle Name")
+        Dim cmd1 As New OleDbCommand("select * from [Section] where [Section] = '" & dr("Section") & "'", conn)
+        Dim dr1 As OleDbDataReader = cmd1.ExecuteReader
+        dr1.Read()
+        Course_ComboBox.Items.Add(dr1.Item("Course"))
+        Course_ComboBox.SelectedIndex = 0
+        Sec_ComboBox.Items.Clear()
         Sec_ComboBox.Items.Add(dr.Item("Section"))
         Sec_ComboBox.SelectedIndex = 0
         Stat_ComboBox.Items.Add(dr.Item("Status"))
         Stat_ComboBox.SelectedIndex = 0
+
     End Sub
     Private Sub Course_ComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Course_ComboBox.SelectedIndexChanged
         Sec_ComboBox.Items.Clear()
@@ -91,7 +99,14 @@ Public Class Form1
             MsgBox("Deleted Successfully")
             Students.LoadStudent()
             Section___Students.LoadSection()
+            Sections.LoadAllSection()
+            Sections.LoadSection()
             Me.Close()
         End If
+    End Sub
+
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Students.TheName = ""
+        Section___Students.TheName = ""
     End Sub
 End Class

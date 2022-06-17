@@ -66,6 +66,7 @@ Public Class Edit_Teacher
             MsgBox("Deleted Successfully")
             Teachers.LoadTeacher()
             Department___Teachers.LoadTeacher()
+            Departments.LoadDepartment()
             Me.Close()
         End If
     End Sub

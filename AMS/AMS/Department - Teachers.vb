@@ -24,4 +24,9 @@ Public Class Department___Teachers
         TheName = row.Cells(1).Value.ToString()
         Edit_Teacher.Show()
     End Sub
+
+    Private Sub Department___Teachers_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Teacher_ADD.Close()
+        Edit_Teacher.Close()
+    End Sub
 End Class

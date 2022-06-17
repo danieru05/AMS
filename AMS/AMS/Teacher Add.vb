@@ -27,6 +27,7 @@ Public Class Teacher_ADD
         Dim dr As OleDbDataReader
         If opt = 0 Then
             Dept_ComboBox.Items.Add(Department___Teachers.Title.Text)
+            Dept_ComboBox.SelectedIndex = 0
         Else
             dr = dept.ExecuteReader
             While dr.Read()
@@ -50,24 +51,30 @@ Public Class Teacher_ADD
     End Sub
 
     Private Sub SignIn_Click(sender As Object, e As EventArgs) Handles SignIn.Click
-        Dim add As New OleDbCommand("Insert into Teacher([user], [pass], [Last Name], [First Name], [Middle Name], [Email], [Department], [Subject Name], [Image]) 
+        If LName_TextBox.Text = "" Or FName_TextBox.Text = "" Or MName_TextBox.Text = "" Or Email_TextBox.Text = "" Or Dept_ComboBox.Text = "" Or Subj_ComboBox.Text = "" Or Sec_Box.Text = "" Then
+            MsgBox("Please fill out all!")
+        Else
+            Dim add As New OleDbCommand("Insert into Teacher([user], [pass], [Last Name], [First Name], [Middle Name], [Email], [Department], [Subject Name], [Image]) 
             values('" & LName_TextBox.Text & "','" & LName_TextBox.Text & "','" & LName_TextBox.Text & "','" & LName_TextBox.Text & "','" & MName_TextBox.Text & "','" & Email_TextBox.Text & "','" & Dept_ComboBox.Text & "','" & Subj_ComboBox.Text & "','-')", conn)
-        add.ExecuteNonQuery()
-        For num As Integer = 0 To Sec_Box.CheckedItems.Count - 1
-            Dim secteach As New OleDbCommand("Insert into [Sections Handled]([Section], [Teacher]) 
+            add.ExecuteNonQuery()
+            For num As Integer = 0 To Sec_Box.CheckedItems.Count - 1
+                Dim secteach As New OleDbCommand("Insert into [Sections Handled]([Section], [Teacher]) 
             values('" & Sec_Box.CheckedItems(num) & "','" & LName_TextBox.Text + ", " + FName_TextBox.Text + " " + MName_TextBox.Text & "')", conn)
-            secteach.ExecuteNonQuery()
-        Next
-        Teachers.Teachers_DataGrid.Rows.Clear()
-        Department()
-        AllTeachers()
-        LName_TextBox.Text = ""
-        FName_TextBox.Text = ""
-        MName_TextBox.Text = ""
-        Email_TextBox.Text = ""
-        Dept_ComboBox.Items.Clear()
-        Subj_ComboBox.Items.Clear()
-        Combobox()
+                secteach.ExecuteNonQuery()
+            Next
+            Teachers.Teachers_DataGrid.Rows.Clear()
+            Department()
+            AllTeachers()
+            Departments.LoadDepartment()
+            LName_TextBox.Text = ""
+            FName_TextBox.Text = ""
+            MName_TextBox.Text = ""
+            Email_TextBox.Text = ""
+            Dept_ComboBox.Items.Clear()
+            Subj_ComboBox.Items.Clear()
+            Sec_Box.Items.Clear()
+            Combobox()
+        End If
     End Sub
 
     Private Sub Teacher_ADD_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
